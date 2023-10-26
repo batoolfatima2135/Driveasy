@@ -10,7 +10,6 @@ export const loginUser = createAsyncThunk('login/user', async (username) => {
       body: JSON.stringify({ username }),
     });
     const message = await response.json();
-    console.log(message);
     return message;
   } catch (error) {
     return error.message;
@@ -36,7 +35,6 @@ const login = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.message = action.payload.message;
         state.status = action.payload.status;
-        console.log(action.payload.status);
         state.loading = false;
       })
       .addCase(loginUser.rejected, (state, action) => {
