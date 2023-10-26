@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const loginUser = createAsyncThunk('greetings/fetchGreetings', async (username) => {
+export const loginUser = createAsyncThunk('login/user', async (username) => {
   try {
     const response = await fetch('http://localhost:3000/users', {
       method: 'POST',
@@ -10,6 +10,7 @@ export const loginUser = createAsyncThunk('greetings/fetchGreetings', async (use
       body: JSON.stringify({ username }),
     });
     const message = await response.json();
+    console.log(message);
     return message;
   } catch (error) {
     return error.message;
@@ -19,6 +20,7 @@ export const loginUser = createAsyncThunk('greetings/fetchGreetings', async (use
 const initialState = {
   loading: false,
   error: null,
+  status: null,
   message: null,
 };
 
@@ -33,6 +35,8 @@ const login = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.message = action.payload.message;
+        state.status = action.payload.status;
+        console.log(action.payload.status);
         state.loading = false;
       })
       .addCase(loginUser.rejected, (state, action) => {
