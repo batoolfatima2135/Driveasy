@@ -21,7 +21,7 @@ const initialState = {
   carDetails: null,
 };
 
-const Car = createSlice({
+const CarDetails = createSlice({
   name: 'Car',
   initialState,
   reducers: {},
@@ -41,4 +41,4 @@ const Car = createSlice({
   },
 });
 
-export default Car.reducer;
+export default CarDetails.reducer;
