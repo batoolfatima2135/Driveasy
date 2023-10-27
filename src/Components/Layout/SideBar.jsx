@@ -117,18 +117,18 @@ const SideBar = () => {
 
   return (
     <div
-      className={`bg-[#fff] min-h-screen ${
-        open ? 'w-72 fixed' : 'w-16'
-      } duration-500 shadow-lg shadow-gray-500 px-2`}
+      className={`bg-[#fff] h-screen ${
+        open ? 'w-72' : 'w-16'
+      } duration-500 shadow-lg shadow-gray-500 px-2 flex flex-col justify-between`}
     >
-      <div className="py-3 px-3 flex justify-end">
-        <FontAwesomeIcon
-          icon={faBarsStaggered}
-          className="cursor-pointer"
-          onClick={toggleSidebar}
-        />
-      </div>
       <div className="">
+        <div className="py-3 px-3 flex justify-end">
+          <FontAwesomeIcon
+            icon={faBarsStaggered}
+            className="cursor-pointer"
+            onClick={toggleSidebar}
+          />
+        </div>
         <img
           src={logo}
           alt="logo"
@@ -138,7 +138,7 @@ const SideBar = () => {
         />
       </div>
       <div
-        className={`mt-[7rem] flex flex-col gap-4 relative ${
+        className={`flex flex-col gap-4 relative ${
           open ? 'ml-[3rem]' : 'ml-[0.1rem]'
         }`}
       >
@@ -165,7 +165,7 @@ const SideBar = () => {
           ))
         }
       </div>
-      <div className="mt-[12rem] flex-col gap-[3px] relative items-center justify-center">
+      <div className=" flex-col gap-[3px] relative items-center justify-center pb-5">
         <div className="flex  items-center justify-center">
           {
             // Create social links dynamically
