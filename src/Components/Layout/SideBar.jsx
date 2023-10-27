@@ -118,7 +118,7 @@ const SideBar = () => {
   return (
     <div
       className={`bg-[#fff] min-h-screen ${
-        open ? 'w-72 fixed' : 'w-16'
+        open ? 'w-72' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2`}
     >
       <div className="py-3 px-3 flex justify-end">

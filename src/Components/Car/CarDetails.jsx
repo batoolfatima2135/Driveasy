@@ -12,10 +12,7 @@ export default function CarDetails() {
   return (
     <div>
       {!car && (
-        <div className="grid grid-cols-9 p-4 mt-5">
-          <div className="col-span-1">
-            <p>nav</p>
-          </div>
+        <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 flex h-screen justify-center items-center">
             <ColorRing
               visible
@@ -31,10 +28,7 @@ export default function CarDetails() {
         </div>
       )}
       { car && (
-      <div className="grid grid-cols-9 p-4 mt-5">
-        <div className="col-span-1">
-          <p>nav</p>
-        </div>
+      <div className="grid grid-cols-8 p-4 mt-5">
         <div className="col-span-8 lg:col-span-5 flex flex-col justify-center align-middle">
           <img src="https://img.freepik.com/free-vector/white-convertible-car-isolated-white-vector_53876-66815.jpg" alt="car" />
           <button type="button" className=" flex justify-end rounded-l-none rounded-r-full bg-custom-green p-1 lg:p-3 lg:w-20 w-11">
