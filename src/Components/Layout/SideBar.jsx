@@ -144,7 +144,7 @@ const SideBar = () => {
       >
         {
           // Create menu items dynamically
-          menus.map((menu, index) => (
+          menus.map((menu) => (
             <Link
               to={menu.link}
               key={menu.name}
@@ -152,7 +152,6 @@ const SideBar = () => {
             >
               {menu.icon}
               <h2
-                
                 className={`whitespace-pre duration-500 ${
                   !open && 'opacity-0 translate-x-28 overflow-hidden'
                 }`}
