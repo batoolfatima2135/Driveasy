@@ -5,7 +5,7 @@ import carDetailsReducer from './Car/carDetailsSlice';
 const store = configureStore({
   reducer: {
     login: loginReducer,
-    car: carDetailsReducer,
+    carData: carDetailsReducer,
   },
 });
 
