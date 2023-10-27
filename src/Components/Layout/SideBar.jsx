@@ -10,8 +10,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const SideBar = () => {
-  // Dynamically create a FontAwesome icon element
-  //   const dynamicIcon = React.createElement(FontAwesomeIcon, { icon: faBars });
   const modelIcon = React.createElement(FontAwesomeIcon, { icon: faCar });
   const lifestyleIcon = React.createElement(FontAwesomeIcon, {
     icon: faCalendar,
