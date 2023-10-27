@@ -59,7 +59,7 @@ const SideBar = () => {
     },
     {
       name: 'add car',
-      link: '/',
+      link: '/car/add',
       icon: driveIcon,
     },
   ];
