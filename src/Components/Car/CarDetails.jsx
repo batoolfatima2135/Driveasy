@@ -28,7 +28,7 @@ export default function CarDetails() {
         </div>
       )}
       { car && (
-      <div className="grid grid-cols-8 p-4 mt-5">
+      <div className="grid grid-cols-8 py-4 mt-5">
         <div className="col-span-8 lg:col-span-5 flex flex-col justify-center align-middle">
           <img src="https://img.freepik.com/free-vector/white-convertible-car-isolated-white-vector_53876-66815.jpg" alt="car" />
           <button type="button" className=" flex justify-end rounded-l-none rounded-r-full bg-custom-green p-1 lg:p-3 lg:w-20 w-11">
@@ -36,7 +36,7 @@ export default function CarDetails() {
           </button>
         </div>
 
-        <div className="col-span-9 lg:col-span-3 flex lg:justify-start justify-center align-middlemt-5 pt-5">
+        <div className="col-span-9 lg:col-span-3 flex lg:justify-start justify-center align-middle mt-5 pt-5">
           <div className="w-5/6 lg:w-4/6">
             <h1 className="text-center lg:text-right text-2xl font-bold ">{car.model}</h1>
             <p className="text-center lg:text-right text-xs font-bold mb-5">50% off on any purchase!</p>
