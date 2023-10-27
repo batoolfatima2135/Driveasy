@@ -18,7 +18,7 @@ const MyForm = () => {
       setFormData({
         ...formData,
         image: selectedImage,
-        imagePreview: URL.createObjectURL(selectedImage), // Create a preview URL
+        imagePreview: URL.createObjectURL(selectedImage),
       });
     } else {
       setFormData({
