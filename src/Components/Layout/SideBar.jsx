@@ -102,7 +102,7 @@ const SideBar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         setOpen(false);
       } else {
         setOpen(true);
@@ -118,7 +118,7 @@ const SideBar = () => {
   return (
     <div
       className={`bg-[#fff] h-screen ${
-        open ? 'w-72' : 'w-16'
+        open ? 'w-72 lg:relative fixed' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2 flex flex-col justify-between`}
     >
       <div className="">
@@ -144,17 +144,14 @@ const SideBar = () => {
       >
         {
           // Create menu items dynamically
-          menus.map((menu, index) => (
+          menus.map((menu) => (
             <Link
               to={menu.link}
               key={menu.name}
-              className="flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white"
+              className="flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition  hover:text-white"
             >
               {menu.icon}
               <h2
-                style={{
-                  transitionDelay: `${index + 3}00ms`,
-                }}
                 className={`whitespace-pre duration-500 ${
                   !open && 'opacity-0 translate-x-28 overflow-hidden'
                 }`}
