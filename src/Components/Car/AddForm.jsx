@@ -10,7 +10,9 @@ const MyForm = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
+    const {
+      name, value, type, files,
+    } = e.target;
     if (type === 'file') {
       const selectedImage = files[0];
       setFormData({
