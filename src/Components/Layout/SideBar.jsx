@@ -8,6 +8,14 @@ import {
   faPlus,
   faBarsStaggered,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF,
+  faGooglePlus,
+  faLinkedinIn,
+  faPinterestP,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import logo from '../../Assets/image/logo192.png';
 
 const SideBar = () => {
   const modelIcon = React.createElement(FontAwesomeIcon, { icon: faCar });
@@ -18,6 +26,20 @@ const SideBar = () => {
     icon: faCalendarCheck,
   });
   const driveIcon = React.createElement(FontAwesomeIcon, { icon: faPlus });
+
+  const twitterIcon = React.createElement(FontAwesomeIcon, { icon: faTwitter });
+  const facebookIcon = React.createElement(FontAwesomeIcon, {
+    icon: faFacebookF,
+  });
+  const gmailIcon = React.createElement(FontAwesomeIcon, {
+    icon: faGooglePlus,
+  });
+  const linkedinIcon = React.createElement(FontAwesomeIcon, {
+    icon: faLinkedinIn,
+  });
+  const pintrestIcon = React.createElement(FontAwesomeIcon, {
+    icon: faPinterestP,
+  });
 
   const menus = [
     {
@@ -42,14 +64,42 @@ const SideBar = () => {
     },
   ];
 
+  const socials = [
+    {
+      name: 'twitter',
+      link: '/',
+      icon: twitterIcon,
+    },
+    {
+      name: 'facebook',
+      link: '/',
+      icon: facebookIcon,
+    },
+    {
+      name: 'google',
+      link: '/',
+      icon: gmailIcon,
+    },
+    {
+      name: 'linkedin',
+      link: '/',
+      icon: linkedinIcon,
+    },
+    {
+      name: 'pintrest',
+      link: '/',
+      icon: pintrestIcon,
+    },
+  ];
+
+  const dynamicDate = new Date().getFullYear();
+
   const [open, setOpen] = useState(true);
 
-  // Function to handle sidebar open/close
   const toggleSidebar = () => {
     setOpen(!open);
   };
 
-  // Close the sidebar on mobile screens (< 768px)
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -68,7 +118,7 @@ const SideBar = () => {
   return (
     <div
       className={`bg-[#fff] min-h-screen ${
-        open ? 'w-72' : 'w-16'
+        open ? 'w-72 fixed' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2`}
     >
       <div className="py-3 px-3 flex justify-end">
@@ -78,14 +128,27 @@ const SideBar = () => {
           onClick={toggleSidebar}
         />
       </div>
-      <div className="mt-4 flex flex-col gap-4 relative">
+      <div className="">
+        <img
+          src={logo}
+          alt="logo"
+          className={`w-[10rem] h-20 mx-auto ${
+            !open && 'opacity-0 translate-x-28 overflow-hidden'
+          }`}
+        />
+      </div>
+      <div
+        className={`mt-[7rem] flex flex-col gap-4 relative ${
+          open ? 'ml-[3rem]' : 'ml-[0.1rem]'
+        }`}
+      >
         {
           // Create menu items dynamically
           menus.map((menu, index) => (
             <Link
               to={menu.link}
               key={menu.name}
-              className="flex items-center text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white"
+              className="flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white"
             >
               {menu.icon}
               <h2
@@ -102,8 +165,35 @@ const SideBar = () => {
           ))
         }
       </div>
+      <div className="mt-[12rem] flex-col gap-[3px] relative items-center justify-center">
+        <div className="flex  items-center justify-center">
+          {
+            // Create social links dynamically
+            socials.map((social) => (
+              <Link
+                to={social.link}
+                key={social.name}
+                className={`whitespace-pre duration-500 flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white ${
+                  !open && 'opacity-0 translate-x-28 overflow-hidden'
+                }`}
+              >
+                {social.icon}
+              </Link>
+            ))
+          }
+        </div>
+        <p
+          className={`whitespace-pre duration-500 flex items-center justify-center text-sm ${
+            !open && 'opacity-0 translate-x-28 overflow-hidden'
+          }`}
+        >
+          &copy;
+          {dynamicDate}
+          All Rights Reserved.
+          <span className="text-[#98c00b] italic">DrivEasy</span>
+        </p>
+      </div>
     </div>
   );
 };
-
 export default SideBar;
