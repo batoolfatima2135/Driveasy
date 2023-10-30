@@ -5,7 +5,7 @@ import { addCar } from '../../Redux/Car/carAddSlice';
 
 const MyForm = () => {
   const status = useSelector((state) => state.addCar.message);
-  const loading = useSelector((state) => state.login.loading);
+  const loading = useSelector((state) => state.addCar.loading);
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
