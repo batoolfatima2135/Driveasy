@@ -30,7 +30,7 @@ export default function CarDetails() {
       { car && (
       <div className="grid grid-cols-8 py-4 mt-5">
         <div className="col-span-8 lg:col-span-5 flex flex-col justify-center align-middle">
-          <img src="https://img.freepik.com/free-vector/white-convertible-car-isolated-white-vector_53876-66815.jpg" alt="car" />
+          <img src={car.image_url} alt="car" />
           <button type="button" className=" flex justify-end rounded-l-none rounded-r-full bg-custom-green p-1 lg:p-3 lg:w-20 w-11">
             <img src={`${process.env.PUBLIC_URL}/icon.PNG`} className="mx-1 mt-1" width={20} alt="icon" />
           </button>

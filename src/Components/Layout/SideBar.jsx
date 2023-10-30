@@ -170,7 +170,7 @@ const SideBar = () => {
               <Link
                 to={social.link}
                 key={social.name}
-                className={`whitespace-pre duration-500 flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white ${
+                className={`whitespace-pre  flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition duration-300  hover:text-white ${
                   !open && 'opacity-0 translate-x-28 overflow-hidden'
                 }`}
               >
