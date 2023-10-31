@@ -38,7 +38,7 @@ export default function CarDetails() {
       )}
       {car && (
         <div className="grid grid-cols-8 py-4 mt-5">
-          <div className="col-span-8 lg:col-span-5 flex flex-col justify-center align-middle">
+          <div className="col-span-8 lg:col-span-5 flex flex-col gap-2 mx-2 justify-center align-middle">
             <img src={car.image_url} alt="car" />
             <button
               type="button"
