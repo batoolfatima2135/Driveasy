@@ -2,53 +2,89 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookF,
+  faInstagramSquare,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 const CarCard = ({ car }) => {
   const twitterIcon = React.createElement(FontAwesomeIcon, { icon: faTwitter });
   const facebookIcon = React.createElement(FontAwesomeIcon, {
     icon: faFacebookF,
   });
+  const instagramIcon = React.createElement(FontAwesomeIcon, {
+    icon: faInstagramSquare,
+  });
 
-  //   const socials = [
-  //     {
-  //       name: 'twitter',
-  //       link: '/',
-  //       icon: twitterIcon,
-  //     },
-  //     {
-  //       name: 'facebook',
-  //       link: '/',
-  //       icon: facebookIcon,
-  //     },
-  //   ];
+  const socials = [
+    {
+      name: 'twitter',
+      link: `/car/details/${car.id}`,
+      icon: twitterIcon,
+    },
+    {
+      name: 'facebook',
+      link: `/car/details/${car.id}`,
+      icon: facebookIcon,
+    },
+    {
+      name: 'instagram',
+      link: `/car/details/${car.id}`,
+      icon: instagramIcon,
+    },
+  ];
   return (
-    <Link to={`/car/${car.id}`}>
-      <div className="car-card h-[500px] lg:h-[600px] pb-10">
-        <div className="w-full h-[30%] lg:[50%]">
+    <Link to={`/car/details/${car.id}`}>
+      <div className="max-w-sm bg-white border-none rounded-lg h-[400px] lg:h-[400px] grid place-items-center">
+        <div className="h-[80%] w-full lg:h-[50%]">
           <img
-            src="https://img.freepik.com/free-vector/white-convertible-car-isolated-white-vector_53876-66815.jpg"
+            src={car.image_url}
             alt={car.name}
-            className="w-full h-[100%] object-cover rounded-md"
+            className="w-[100px] h-[100px] mx-auto object-cover"
           />
         </div>
-        <div className="w-full h-[70%] lg:h-[50%] flex flex-col justify-center items-center">
-          <h1 className="text-2xl font-bold">{car.name}</h1>
-          <div className="dot-line text-center w-[80%] mx-auto text-gray-500 text-lg font-bold ">
-            . . . . . . . . . . . . . .
+        <div className="p-5">
+          <div className="flex items-center justify-center">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight ">
+              {car.name}
+            </h5>
           </div>
-          {/* <ul className="flex justify-center p-3 mt-10">
+          <div className="border-dotted border-gray-400 w-[100%] flex items-center justify-center text-gray-400 font-bold">
+            . . . . . . . . . . . .
+          </div>
+          <div className="grid place-items-center">
+            <p className="mb-3 font-normal text-gray-400">
+              Here we have the
+              {' '}
+              {car.name}
+              {' '}
+              for you. It is a
+              {' '}
+              {car.color}
+              {' '}
+              car and
+              the model is
+              {' '}
+              {car.model}
+              .
+            </p>
+          </div>
+          <div
+            className="flex items-center justify-center gap-6 mt-6"
+            aria-label="social"
+          >
             {socials.map((social) => (
-              <li
+              <a
                 key={social.name}
-                className="inline-block mx-2 rounded-full border-2 border-gray-300 p-2 me-5"
+                href={social.link}
+                className="text-gray-400 h-6 w-6  rounded-full border border-gray-300 items-center justify-center flex "
+                aria-label={social.name}
               >
-                <Link className="text-2xl text-gray-400" to={social.link}>
-                  {social.icon}
-                </Link>
-              </li>
+                {social.icon}
+              </a>
             ))}
-          </ul> */}
+          </div>
         </div>
       </div>
     </Link>
@@ -56,7 +92,13 @@ const CarCard = ({ car }) => {
 };
 
 CarCard.propTypes = {
-  car: PropTypes.object.isRequired,
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CarCard;
