@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchCars = createAsyncThunk('car/all', async () => {
-  console.log('fetchCars');
   try {
     const response = await fetch('http://localhost:3000/cars', {
       method: 'GET',
