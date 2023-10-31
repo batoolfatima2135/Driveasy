@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { fetchCars } from '../../Redux/Car/carSlice';
 import CarCard from './CarCard';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '../../Car.css';
 
 export default function Car() {
   const dispatch = useDispatch();
@@ -18,33 +21,48 @@ export default function Car() {
     return <p>Loading...</p>;
   }
 
+  const breakpoints = {
+    // Extra small screens (phones)
+    320: {
+      slidesPerView: 1,
+    },
+    // Small screens (tablets)
+    768: {
+      slidesPerView: 2,
+    },
+    // Medium screens (desktops)
+    1024: {
+      slidesPerView: 3,
+    },
+    // Large screens (large desktops)
+    1440: {
+      slidesPerView: 3,
+    },
+  };
+
   return (
-    <div className="pt-10 flex justify-end">
-      <div className="w-[100%] lg:w-[80%] h-[115vh]">
-        <h1 className=" font-extrabold text-2xl lg:text-4xl text-center tracking-wider">
-          LATEST MODELS
+    <div className="flex flex-col items-center justify-center h-screen gap-10 ">
+      <div className="flex flex-col items-center justify-center gap-2">
+        <h1 className="uppercase font-extrabold text-2xl lg:text-4xl tracking-wider">
+          latest models
         </h1>
-        <h2 className="font-semibold  text-gray-500 text-center my-5">
-          Please select a Yacht
-        </h2>
-        <div className="mt-10">
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              768: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {cars.map((car) => (
-              <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
-                <CarCard car={car} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <p className="text-gray-400 font-semibold">please select a car model</p>
+      </div>
+      <div className="w-full mx-auto">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={3}
+          breakpoints={breakpoints}
+          navigation
+          modules={[Navigation]}
+          className=""
+        >
+          {cars.map((car) => (
+            <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
+              <CarCard car={car} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
