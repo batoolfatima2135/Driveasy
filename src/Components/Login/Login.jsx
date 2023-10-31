@@ -50,6 +50,7 @@ export default function Login() {
               onChange={handleUsernameChange}
               className="outline-none w-full border rounded-full py-3 px-5"
               placeholder="Enter Username"
+              required
             />
             {loading && (
             <div className="flex justify-center align-middle">
