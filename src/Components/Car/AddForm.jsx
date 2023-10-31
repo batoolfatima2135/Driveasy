@@ -143,11 +143,20 @@ const MyForm = () => {
                 ariaLabel="blocks-loading"
                 wrapperStyle={{}}
                 wrapperClass="blocks-wrapper"
-                colors={['#FFFFFF', '#EDEADE', '#F9F6EE', '#FFF8DC', '#FFFFF0', '#FAF9F6']}
+                colors={[
+                  '#8EB904',
+                  '#A5D606',
+                  '#8EB904',
+                  '#A5D606',
+                  '#8EB904',
+                  '#A5D606',
+                ]}
               />
             </div>
           )}
-          {!loading && status && (<p className="text-green-800 text-center">{status}</p>)}
+          {!loading && status && (
+            <p className="text-green-800 text-center">{status}</p>
+          )}
           <div className="flex items-center justify-center">
             <button
               type="submit"
