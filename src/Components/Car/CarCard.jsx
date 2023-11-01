@@ -46,15 +46,16 @@ const CarCard = ({ car }) => {
         </div>
         <div className="p-5">
           <div className="flex items-center justify-center">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight ">
+            <h5 className="mb-2 text-xl font-bold uppercase  tracking-tight ">
               {car.name}
             </h5>
+
           </div>
           <div className="border-dotted border-gray-400 w-[100%] flex items-center justify-center text-gray-400 font-bold">
             . . . . . . . . . . . .
           </div>
           <div className="grid place-items-center">
-            <p className="mb-3 font-normal text-gray-400">
+            <p className="mb-3 font-normal text-gray-400 text-center text-sm mt-10">
               Here we have the
               {' '}
               {car.name}

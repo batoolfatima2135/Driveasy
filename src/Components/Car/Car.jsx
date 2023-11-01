@@ -66,7 +66,7 @@ export default function Car() {
               latest models
             </h1>
             <p className="text-gray-400 font-semibold">
-              please select a car model
+              Please select a Car Model
             </p>
           </div>
           <div className="w-full mx-auto">
