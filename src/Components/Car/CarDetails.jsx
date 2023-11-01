@@ -99,7 +99,8 @@ export default function CarDetails() {
                 />
               </div>
               <div className="flex justify-center lg:justify-end mt-5 pt-5 lg:mr-7">
-                <button
+                <a
+                  href={`/reserve/${car.id}`}
                   type="button"
                   className="rounded-full flex px-4 justify-center align-middle p-3 font-semibold bg-custom-green hover:bg-custom-green-light text-white w-3/5"
                 >
@@ -110,7 +111,7 @@ export default function CarDetails() {
                     width={17}
                     alt="colors"
                   />
-                </button>
+                </a>
               </div>
             </div>
           </div>
