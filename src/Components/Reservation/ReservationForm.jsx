@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import 'react-datepicker/dist/react-datepicker.css';
 import { fetchCars } from '../../Redux/Car/carSlice';
 
 export default function ReservationForm() {
@@ -13,7 +12,7 @@ export default function ReservationForm() {
     return `${year}-${month}-${day}`;
   }
   const [minDate] = useState(getCurrentDate());
-
+  const userID = localStorage.getItem('userId');
   const { id } = useParams();
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars.cars);
@@ -31,14 +30,14 @@ export default function ReservationForm() {
     if (!id) {
       setFormData({
         ...formData,
-        user_id: 1,
+        user_id: userID,
         [name]: value,
       });
     } else {
       carId = parseInt(id, 10);
       setFormData({
         ...formData,
-        user_id: 4,
+        user_id: userID,
         car_id: carId,
         [name]: value,
       });
