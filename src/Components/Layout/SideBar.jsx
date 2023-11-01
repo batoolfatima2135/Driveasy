@@ -49,7 +49,7 @@ const SideBar = () => {
     },
     {
       name: 'book car',
-      link: '/',
+      link: '/reserve',
       icon: lifestyleIcon,
     },
     {
@@ -117,7 +117,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`bg-[#fff] h-screen ${
+      className={`bg-[#fff] h-full ${
         open ? 'w-72 lg:relative fixed' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2 flex flex-col justify-between`}
       style={{ zIndex: 1000 }}
