@@ -36,7 +36,7 @@ const CarCard = ({ car }) => {
   ];
   return (
     <Link to={`/car/details/${car.id}`}>
-      <div className="max-w-sm bg-white border-none rounded-lg h-[400px] lg:h-[400px] grid place-items-center">
+      <div className="max-w-sm bg-white border-none rounded-lg h-[400px] lg:h-[400px] grid place-items-center hover:border-gray-500 hover:shadow-md">
         <div className="h-[80%] w-full lg:h-[50%]">
           <img
             src={car.image_url}
@@ -49,7 +49,6 @@ const CarCard = ({ car }) => {
             <h5 className="mb-2 text-xl font-bold uppercase  tracking-tight ">
               {car.name}
             </h5>
-
           </div>
           <div className="border-dotted border-gray-400 w-[100%] flex items-center justify-center text-gray-400 font-bold">
             . . . . . . . . . . . .
