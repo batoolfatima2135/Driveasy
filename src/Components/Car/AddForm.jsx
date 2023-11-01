@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
+
 import { addCar } from '../../Redux/Car/carAddSlice';
 
 const MyForm = () => {
   const status = useSelector((state) => state.addCar.message);
   const loading = useSelector((state) => state.addCar.loading);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -37,15 +40,17 @@ const MyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
     dispatch(addCar(formData));
-    setFormData({
-      name: '',
-      price: '',
-      color: '',
-      model: '',
-      image: null, // For file input
-    });
   };
+
+  useEffect(() => {
+    if (!loading && status) {
+      // Redirect when loading is false and status has a value
+      navigate(`/thankyou/${status}`);
+    }
+  }, [status, loading, navigate]);
+
   return (
     <div className="min-h-screen flex items-center justify-center ml-[0.1em] md:max-w-md md:mx-auto max-w-[16rem]">
       <div>
@@ -154,9 +159,6 @@ const MyForm = () => {
               />
             </div>
           )}
-          {!loading && status && (
-            <p className="text-green-800 text-center">{status}</p>
-          )}
           <div className="flex items-center justify-center">
             <button
               type="submit"
@@ -166,6 +168,7 @@ const MyForm = () => {
             </button>
           </div>
         </form>
+
       </div>
     </div>
   );
