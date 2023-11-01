@@ -4,6 +4,7 @@ import Login from './Components/Login/Login';
 import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
+import Thankyou from './Pages/Thankyou';
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
       <div style={contentStyle} className="">
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/thankyou/:status" element={<Thankyou />} />
           <Route path="/cars" element={<CarPage />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
           <Route path="/car/add" element={<AddForm />} />
