@@ -4,6 +4,7 @@ import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
 import ReservationForm from './Components/Reservation/ReservationForm';
+import Car from './Components/Car/Car';
 
 function App() {
   const location = useLocation();

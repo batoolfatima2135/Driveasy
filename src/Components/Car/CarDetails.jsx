@@ -99,8 +99,8 @@ export default function CarDetails() {
                 />
               </div>
               <div className="flex justify-center lg:justify-end lg:mt-5 pt-5 lg:mr-7">
-                <button
-                  type="button"
+                <a
+                  href={`/reserve/${car.id}`}
                   className="rounded-full flex px-4 justify-center align-middle p-3 font-semibold bg-custom-green hover:bg-custom-green-light text-white w-3/5"
                 >
                   Reserve
