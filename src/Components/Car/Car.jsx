@@ -70,20 +70,20 @@ export default function Car() {
             </p>
           </div>
           <div className="w-full mx-auto">
-            <Swiper
+            {/* <Swiper
               spaceBetween={20}
               slidesPerView={3}
               breakpoints={breakpoints}
               navigation
               modules={[Navigation]}
-              className=""
+              className="my-4"
             >
               {cars.map((car) => (
                 <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
                   <CarCard car={car} />
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper> */}
           </div>
         </div>
       )}
