@@ -49,7 +49,7 @@ const SideBar = () => {
     },
     {
       name: 'book car',
-      link: '/',
+      link: '/reserve',
       icon: lifestyleIcon,
     },
     {

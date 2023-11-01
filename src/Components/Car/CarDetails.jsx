@@ -110,7 +110,7 @@ export default function CarDetails() {
                     width={17}
                     alt="colors"
                   />
-                </button>
+                </a>
               </div>
             </div>
           </div>
