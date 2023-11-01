@@ -30,14 +30,14 @@ export default function ReservationForm() {
     if (!id) {
       setFormData({
         ...formData,
-        user_id: userID,
+        user_id: parseInt(userID, 10),
         [name]: value,
       });
     } else {
       carId = parseInt(id, 10);
       setFormData({
         ...formData,
-        user_id: userID,
+        user_id: parseInt(userID, 10),
         car_id: carId,
         [name]: value,
       });

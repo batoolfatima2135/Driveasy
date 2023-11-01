@@ -38,7 +38,7 @@ export default function Car() {
   };
 
   return (
-    <div>
+    <div className="mx-2">
       {loading ? (
         <div className="col-span-8 flex h-screen justify-center items-center">
           <ColorRing
@@ -60,7 +60,7 @@ export default function Car() {
           />
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center h-screen gap-10 ">
+        <div className="flex flex-col  justify-center h-screen mr-3 ">
           <div className="flex flex-col items-center justify-center gap-2">
             <h1 className="uppercase font-extrabold text-2xl lg:text-4xl tracking-wider">
               latest models
@@ -76,7 +76,7 @@ export default function Car() {
               breakpoints={breakpoints}
               navigation
               modules={[Navigation]}
-              className=""
+              className="my-4"
             >
               {cars.map((car) => (
                 <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
