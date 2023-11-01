@@ -9,15 +9,10 @@ function App() {
   const location = useLocation();
   const showSideBar = location.pathname !== '/';
 
-  const sidebarStyle = showSideBar ? { width: '25%' } : { width: '0' };
-  const contentStyle = showSideBar
-    ? { width: '70%', marginLeft: '-1rem' }
-    : { width: '100%' };
-
   return (
-    <div style={{ display: 'flex', width: '100%' }}>
-      <div style={sidebarStyle}>{showSideBar && <SideBar />}</div>
-      <div style={contentStyle} className="">
+    <div className="grid min-h-screen grid-cols-[auto_1fr] justify-center gap-4 overflow-hidden">
+      <div>{showSideBar && <SideBar />}</div>
+      <div>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/cars" element={<CarPage />} />
