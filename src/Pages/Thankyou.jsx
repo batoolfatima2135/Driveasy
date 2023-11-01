@@ -14,7 +14,7 @@ const Thankyou = () => {
       <h2 className="font-semibold capitalize text-center">
         {status}
         {' '}
-        🎉
+        🎉🎊
       </h2>
       <Confetti
         width={width}

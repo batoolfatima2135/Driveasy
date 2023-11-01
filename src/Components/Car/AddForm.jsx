@@ -46,7 +46,6 @@ const MyForm = () => {
 
   useEffect(() => {
     if (!loading && status) {
-      // Redirect when loading is false and status has a value
       navigate(`/thankyou/${status}`);
     }
   }, [status, loading, navigate]);
