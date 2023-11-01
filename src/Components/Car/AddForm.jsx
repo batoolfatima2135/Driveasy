@@ -48,14 +48,15 @@ const MyForm = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="lg:w-3/4 ">
-        <h1 className="text-2xl font-bold text-center uppercase mb-5 text-custom-green">
-          Add Car
-        </h1>
+      <div className="lg:w-3/4">
+
         <form
           onSubmit={handleSubmit}
           className=" px-12 p-5 m-4 shadow-lg shadow-gray-500 rounded-md"
         >
+          <h1 className="text-2xl font-bold text-center uppercase  text-custom-green">
+            Add Car
+          </h1>
           <div className="rounded-full">
             {formData.imagePreview && (
               <img
