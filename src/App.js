@@ -10,9 +10,9 @@ function App() {
   const showSideBar = location.pathname !== '/';
 
   return (
-    <div className="grid justify-center align-middle grid-cols-9">
-      <div className="col-span-2">{showSideBar && <SideBar />}</div>
-      <div className="col-span-7">
+    <div className="grid justify-center align-middle grid-cols-7 xl:grid-cols-9 lg:grid-cols-10 h-screen">
+      <div className="col-span-1 xl:col-span-2 lg:col-span-3">{showSideBar && <SideBar />}</div>
+      <div className="col-span-6 xl:col-span-7 lg:col-span-7">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/cars" element={<Car />} />

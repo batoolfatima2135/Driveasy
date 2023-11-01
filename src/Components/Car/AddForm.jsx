@@ -47,14 +47,14 @@ const MyForm = () => {
     });
   };
   return (
-    <div className="min-h-screen flex items-center justify-center ml-[0.1em] md:max-w-md md:mx-auto max-w-[16rem]">
-      <div>
-        <h1 className="text-2xl font-bold text-center mb-5 text-[#a5d606]">
+    <div className="flex items-center justify-center h-screen">
+      <div className="lg:w-3/4 ">
+        <h1 className="text-2xl font-bold text-center uppercase mb-5 text-custom-green">
           Add Car
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="mx-auto p-4 space-y-4 shadow-lg shadow-gray-500 bg-white rounded-md lg:w-[34rem]"
+          className=" px-12 p-5 m-4 shadow-lg shadow-gray-500 rounded-md"
         >
           <div className="rounded-full">
             {formData.imagePreview && (
@@ -65,21 +65,21 @@ const MyForm = () => {
               />
             )}
           </div>
-          <div>
+          <div className="my-2">
             <label htmlFor="image" className="block text-gray-600">
-              Image
+              Car Image
               <input
                 id="image"
                 type="file"
                 name="image"
                 onChange={handleChange}
-                className="w-full border-b outline-none rounded p-2"
+                className="w-full border-b  border-gray-300 outline-none rounded p-2"
               />
             </label>
           </div>
-          <div>
+          <div className="my-2">
             <label htmlFor="name" className="block text-gray-600">
-              Name
+              Car Name
               <input
                 id="name"
                 type="text"
@@ -87,13 +87,13 @@ const MyForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border-b outline-none rounded p-2"
+                className="w-full border-b border-gray-300 outline-none rounded p-2"
               />
             </label>
           </div>
-          <div>
+          <div className="my-2">
             <label htmlFor="price" className="block text-gray-600">
-              Price
+              Price Per Day ($)
               <input
                 id="price"
                 type="number"
@@ -101,13 +101,13 @@ const MyForm = () => {
                 required
                 value={formData.price}
                 onChange={handleChange}
-                className="w-full border-b outline-none rounded p-2"
+                className="w-full border-b  border-gray-300 outline-none rounded p-2 "
               />
             </label>
           </div>
-          <div>
+          <div className="my-2">
             <label htmlFor="color" className="block text-gray-600">
-              Color
+              Car Color
               <input
                 id="color"
                 type="text"
@@ -115,13 +115,13 @@ const MyForm = () => {
                 required
                 value={formData.color}
                 onChange={handleChange}
-                className="w-full border-b outline-none rounded p-2"
+                className="w-full border-b outline-none border-gray-300  rounded p-2"
               />
             </label>
           </div>
-          <div>
+          <div className="my-2">
             <label htmlFor="model" className="block text-gray-600">
-              Model
+              Car Model
               <input
                 id="model"
                 type="text"
@@ -129,7 +129,7 @@ const MyForm = () => {
                 required
                 value={formData.model}
                 onChange={handleChange}
-                className="w-full border-b outline-none rounded p-2"
+                className="w-full border-b border-gray-300 outline-none rounded p-2"
               />
             </label>
           </div>
@@ -162,7 +162,7 @@ const MyForm = () => {
               type="submit"
               className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300"
             >
-              Submit
+              SUBMIT
             </button>
           </div>
         </form>

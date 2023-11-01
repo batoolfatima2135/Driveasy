@@ -38,7 +38,7 @@ export default function Car() {
   };
 
   return (
-    <div>
+    <div className="mx-2">
       {loading ? (
         <div className="col-span-8 flex h-screen justify-center items-center">
           <ColorRing
