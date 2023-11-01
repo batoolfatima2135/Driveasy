@@ -4,6 +4,7 @@ import Login from './Components/Login/Login';
 import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
+import ReservationForm from './Components/Reservation/ReservationForm';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/cars" element={<CarPage />} />
+          <Route path="/reserve/:id?" element={<ReservationForm />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
           <Route path="/car/add" element={<AddForm />} />
         </Routes>
