@@ -2,7 +2,7 @@ import React from 'react';
 import Car from '../Components/Car/Car';
 
 const CarPage = () => (
-  <div className="w-full">
+  <div className="bg-red-400">
     <Car />
   </div>
 );

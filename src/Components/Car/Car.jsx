@@ -60,7 +60,7 @@ export default function Car() {
           />
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center h-screen gap-10 ">
+        <div className="flex flex-col  justify-center h-screen mr-3 ">
           <div className="flex flex-col items-center justify-center gap-2">
             <h1 className="uppercase font-extrabold text-2xl lg:text-4xl tracking-wider">
               latest models
@@ -70,7 +70,7 @@ export default function Car() {
             </p>
           </div>
           <div className="w-full mx-auto">
-            {/* <Swiper
+            <Swiper
               spaceBetween={20}
               slidesPerView={3}
               breakpoints={breakpoints}
@@ -83,7 +83,7 @@ export default function Car() {
                   <CarCard car={car} />
                 </SwiperSlide>
               ))}
-            </Swiper> */}
+            </Swiper>
           </div>
         </div>
       )}

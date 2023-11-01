@@ -75,14 +75,14 @@ const CarCard = ({ car }) => {
             aria-label="social"
           >
             {socials.map((social) => (
-              <a
+              <div
                 key={social.name}
                 href={social.link}
                 className="text-gray-400 h-6 w-6  rounded-full border border-gray-300 items-center justify-center flex "
                 aria-label={social.name}
               >
                 {social.icon}
-              </a>
+              </div>
             ))}
           </div>
         </div>

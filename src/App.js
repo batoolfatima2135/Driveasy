@@ -1,21 +1,21 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
-import CarPage from './Pages/CarPage';
 import Login from './Components/Login/Login';
 import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
+import Car from './Components/Car/Car';
 
 function App() {
   const location = useLocation();
   const showSideBar = location.pathname !== '/';
 
   return (
-    <div className="grid min-h-screen grid-cols-[auto_1fr] justify-center gap-4 overflow-hidden">
-      <div>{showSideBar && <SideBar />}</div>
-      <div>
+    <div className="grid justify-center align-middle grid-cols-9">
+      <div className="col-span-2">{showSideBar && <SideBar />}</div>
+      <div className="col-span-7">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/cars" element={<CarPage />} />
+          <Route path="/cars" element={<Car />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
           <Route path="/car/add" element={<AddForm />} />
         </Routes>
