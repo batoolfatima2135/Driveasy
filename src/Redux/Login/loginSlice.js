@@ -9,8 +9,14 @@ export const loginUser = createAsyncThunk('login/user', async (username) => {
       },
       body: JSON.stringify({ username }),
     });
-    const message = await response.json();
-    return message;
+    const data = await response.json();
+    // store user details
+    if (data.status === 'login') {
+      localStorage.setItem('userId', data.user_id);
+      localStorage.setItem('username', username);
+    }
+
+    return data;
   } catch (error) {
     return error.message;
   }
@@ -20,6 +26,9 @@ const initialState = {
   loading: false,
   error: null,
   status: null,
+  // get user details from local storage
+  userId: localStorage.getItem('userId') || null,
+  username: localStorage.getItem('username') || '',
 };
 
 const login = createSlice({
