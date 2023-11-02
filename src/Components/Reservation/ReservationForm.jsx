@@ -52,20 +52,17 @@ export default function ReservationForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(addReservation(formData));
-    setFormData({
-      city: '',
-      date: '',
-      user_id: '',
-      car_id: '',
-    });
   };
 
   useEffect(() => {
     dispatch(fetchCars());
-    if (!loading && status) {
-      navigate(`/thankyou/${status}`);
+    if (!loading && status === 'booked') {
+      navigate(`/thankyou/${message}`);
     }
-  }, [dispatch, loading, status, navigate]);
+    if (!loading && status === 'Not booked') {
+      navigate(`/sorry/${message}`);
+    }
+  }, [dispatch, loading, status, navigate, message]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
