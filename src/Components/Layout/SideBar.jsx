@@ -49,7 +49,7 @@ const SideBar = () => {
     },
     {
       name: 'book car',
-      link: '/',
+      link: '/reserve',
       icon: lifestyleIcon,
     },
     {
@@ -94,10 +94,16 @@ const SideBar = () => {
 
   const dynamicDate = new Date().getFullYear();
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(window.innerWidth >= 768);
 
   const toggleSidebar = () => {
     setOpen(!open);
+  };
+
+  const closeSidebar = () => {
+    if (window.innerWidth < 1024) {
+      setOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -117,7 +123,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`bg-[#fff] h-screen ${
+      className={`bg-[#fff] h-full ${
         open ? 'w-72 lg:relative fixed' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2 flex flex-col justify-between`}
       style={{ zIndex: 1000 }}
@@ -150,6 +156,7 @@ const SideBar = () => {
               to={menu.link}
               key={menu.name}
               className="flex items-center text-[#525252] text-sm gap-3.5 py-3 px-3 font-extrabold uppercase hover:bg-[#98c00b] hover-text-[#fff] rounded-md transition  hover:text-white"
+              onClick={closeSidebar}
             >
               {menu.icon}
               <h2

@@ -37,7 +37,7 @@ export default function CarDetails() {
         </div>
       )}
       {car && (
-        <div className="grid grid-cols-8 py-4 mt-5">
+        <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 lg:col-span-5 flex flex-col gap-2 mx-2 justify-center align-middle">
             <img src={car.image_url} alt="car" />
             <button
@@ -53,7 +53,7 @@ export default function CarDetails() {
             </button>
           </div>
 
-          <div className="col-span-9 lg:col-span-3 flex lg:justify-start justify-center align-middle mt-5 pt-5">
+          <div className="col-span-9 lg:col-span-3 flex justify-center align-middle mt-5 lg:pt-5">
             <div className="w-5/6 lg:w-4/6">
               <h1 className="text-center lg:text-right text-2xl font-bold ">
                 {car.model}
@@ -92,15 +92,15 @@ export default function CarDetails() {
                   <b className="text-yellow-500 text-lg"> &gt; </b>
                 </a>
               </p>
-              <div className="flex justify-center lg:justify-end my-2">
+              <div className="flex justify-center lg:justify-end lg:my-2">
                 <img
                   src={`${process.env.PUBLIC_URL}/colors.png`}
                   alt="colors"
                 />
               </div>
-              <div className="flex justify-center lg:justify-end mt-5 pt-5 lg:mr-7">
-                <button
-                  type="button"
+              <div className="flex justify-center lg:justify-end lg:mt-5 pt-5 lg:mr-7">
+                <a
+                  href={`/reserve/${car.id}`}
                   className="rounded-full flex px-4 justify-center align-middle p-3 font-semibold bg-custom-green hover:bg-custom-green-light text-white w-3/5"
                 >
                   Reserve
@@ -110,7 +110,7 @@ export default function CarDetails() {
                     width={17}
                     alt="colors"
                   />
-                </button>
+                </a>
               </div>
             </div>
           </div>
