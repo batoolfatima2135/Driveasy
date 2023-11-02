@@ -50,9 +50,8 @@ const MyForm = () => {
   }, [status, loading, navigate]);
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center">
       <div className="lg:w-3/4">
-
         <form
           onSubmit={handleSubmit}
           className=" px-12 p-5 m-4 shadow-lg shadow-gray-500 rounded-md"
@@ -65,7 +64,7 @@ const MyForm = () => {
               <img
                 src={formData.imagePreview}
                 alt="Preview"
-                className="w-20 h-20 mx-auto rounded-full object-cover"
+                className="w-1/2 mx-auto rounded-full object-cover"
               />
             )}
           </div>
