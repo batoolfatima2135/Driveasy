@@ -74,7 +74,7 @@ export default function CarDetails() {
                 <p className="font-medium text-sm">{car.color}</p>
               </div>
               <div className="flex justify-between  p-2 px-4">
-                <p className="font-medium text-sm">Price</p>
+                <p className="font-medium text-sm">Price Per Day</p>
                 <p className="font-medium text-sm">
                   $
                   {car.price}
