@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCars } from '../../Redux/Car/carSlice';
 import { addReservation } from '../../Redux/Reservation/reservationSlice';
 
@@ -17,7 +17,8 @@ export default function ReservationForm() {
   const userID = localStorage.getItem('userId');
   const { id } = useParams();
   const dispatch = useDispatch();
-  // const status = useSelector((state) => state.reservation.message);
+  const navigate = useNavigate();
+  const status = useSelector((state) => state.addReservation.message);
   const loading = useSelector((state) => state.addReservation.loading);
   const cars = useSelector((state) => state.cars.cars);
   const [formData, setFormData] = useState({
@@ -60,7 +61,10 @@ export default function ReservationForm() {
 
   useEffect(() => {
     dispatch(fetchCars());
-  }, [dispatch]);
+    if (!loading && status) {
+      navigate(`/thankyou/${status}`);
+    }
+  }, [dispatch, loading, status, navigate]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
@@ -157,11 +161,11 @@ export default function ReservationForm() {
                   wrapperClass="blocks-wrapper"
                   colors={[
                     '#8EB904',
-                    '#FFFFFF',
                     '#8EB904',
-                    '#FFFFFF',
                     '#8EB904',
-                    '#FFFFFF',
+                    '#8EB904',
+                    '#8EB904',
+                    '#8EB904',
                   ]}
                 />
               </div>

@@ -10,7 +10,7 @@ export default function CarDetails() {
   const { id } = useParams();
   useEffect(() => {
     dispatch(fetchCarDetails(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
   return (
     <div>
       {!car && (
