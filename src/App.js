@@ -6,6 +6,7 @@ import AddForm from './Components/Car/AddForm';
 import ReservationForm from './Components/Reservation/ReservationForm';
 import Car from './Components/Car/Car';
 import Thankyou from './Pages/Thankyou';
+import Sorry from './Pages/Sorry';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/thankyou/:status" element={<Thankyou />} />
+          <Route path="/sorry/:status" element={<Sorry />} />
           <Route path="/cars" element={<Car />} />
           <Route path="/reserve/:id?" element={<ReservationForm />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
