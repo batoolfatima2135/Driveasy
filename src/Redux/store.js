@@ -3,7 +3,7 @@ import loginReducer from './Login/loginSlice';
 import carDetailsReducer from './Car/carDetailsSlice';
 import carSliceReducer from './Car/carSlice';
 import carAddReducer from './Car/carAddSlice';
-import reservationSliceReducer from './Reservation/reservationSlice';
+import reservationAddReducer from './Reservation/reservationSlice';
 
 const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ const store = configureStore({
     carData: carDetailsReducer,
     cars: carSliceReducer,
     addCar: carAddReducer,
-    reservation: reservationSliceReducer,
+    addReservation: reservationAddReducer,
   },
 });
 
