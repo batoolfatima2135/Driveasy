@@ -30,6 +30,7 @@ const initialState = {
   loading: false,
   error: null,
   message: null,
+  status: null,
 };
 
 const ReservationAdd = createSlice({
@@ -43,10 +44,11 @@ const ReservationAdd = createSlice({
       })
       .addCase(addReservation.fulfilled, (state, action) => {
         state.message = action.payload.message;
+        state.status = action.payload.status;
         state.loading = false;
       })
       .addCase(addReservation.rejected, (state, action) => {
-        state.error = action.payload.message;
+        state.error = action.payload.error;
         state.loading = false;
       });
   },

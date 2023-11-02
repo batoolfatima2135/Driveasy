@@ -18,7 +18,8 @@ export default function ReservationForm() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = useSelector((state) => state.addReservation.message);
+  const status = useSelector((state) => state.addReservation.status);
+  const message = useSelector((state) => state.addReservation.message);
   const loading = useSelector((state) => state.addReservation.loading);
   const cars = useSelector((state) => state.cars.cars);
   const [formData, setFormData] = useState({
@@ -51,20 +52,17 @@ export default function ReservationForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(addReservation(formData));
-    setFormData({
-      city: '',
-      date: '',
-      user_id: '',
-      car_id: '',
-    });
   };
 
   useEffect(() => {
     dispatch(fetchCars());
-    if (!loading && status) {
-      navigate(`/thankyou/${status}`);
+    if (!loading && status === 'booked') {
+      navigate(`/thankyou/${message}`);
     }
-  }, [dispatch, loading, status, navigate]);
+    if (!loading && status === 'Not booked') {
+      navigate(`/sorry/${message}`);
+    }
+  }, [dispatch, loading, status, navigate, message]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
@@ -170,7 +168,11 @@ export default function ReservationForm() {
                 />
               </div>
             )}
+            {status === 'Not booked' && (
+            <p className="font-semibold text-center uppercase text-red-600 mt-4">{message}</p>
+            )}
             <div className="flex justify-center">
+
               <button
                 type="submit"
                 className="bg-white lg:m-4 md:m-4 m-2 lg:p-5 p-3 text-sm lg:text-base  font-medium text-custom-green  py-3  rounded-full hover:bg-custom-green-light hover:text-white focus:outline-none"
