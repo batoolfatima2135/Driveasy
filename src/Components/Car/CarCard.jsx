@@ -37,11 +37,11 @@ const CarCard = ({ car }) => {
   return (
     <Link to={`/car/details/${car.id}`}>
       <div className="max-w-sm bg-white border-none rounded-lg h-[400px] lg:h-[400px] grid place-items-center hover:border-gray-500 hover:shadow-md">
-        <div className="h-[80%] w-full lg:h-[50%]">
+        <div>
           <img
             src={car.image_url}
             alt={car.name}
-            className="w-[100px] h-[100px] mx-auto object-cover"
+            className="mx-auto object-cover"
           />
         </div>
         <div className="p-5">
