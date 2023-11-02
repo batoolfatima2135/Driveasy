@@ -11,7 +11,7 @@ import Sorry from './Pages/Sorry';
 function App() {
   const location = useLocation();
   const showSideBar = location.pathname !== '/';
-  const reservationForm = location.pathname === '/reserve';
+  const reservationForm = /^\/reserve(\/\d+)?\/?$/.test(location.pathname);
 
   return (
     <div className="grid justify-center align-middle grid-cols-7 xl:grid-cols-9 lg:grid-cols-10 h-screen">
