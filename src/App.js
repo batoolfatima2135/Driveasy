@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { bool } from 'prop-types';
 import Login from './Components/Login/Login';
 import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
