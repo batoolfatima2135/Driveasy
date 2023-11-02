@@ -1,45 +1,55 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchReservations = createAsyncThunk(
-  'reservations/fetchReservations',
+export const addReservation = createAsyncThunk(
+  'reservation/add',
   async (formData) => {
-    const response = await fetch('http://localhost:3000/reservations', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await response.json();
-    return data;
+    const data = new FormData();
+
+    data.append('reservation[city]', formData.city);
+    data.append('reservation[date]', formData.date);
+    data.append('reservation[user_id]', formData.user_id);
+    data.append('reservation[car_id]', formData.car_id);
+    try {
+      const response = await fetch('http://localhost:3000/reservations', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (response.ok) {
+        const status = await response.json();
+        return status;
+      }
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    } catch (error) {
+      return error.message;
+    }
   },
 );
 
 const initialState = {
-  reservation: null,
   loading: false,
   error: null,
+  message: null,
 };
 
-const reservationSlice = createSlice({
-  name: 'reservations',
+const ReservationAdd = createSlice({
+  name: 'addReservation',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchReservations.pending, (state) => {
+      .addCase(addReservation.pending, (state) => {
         state.loading = true;
-        state.error = null;
       })
-      .addCase(fetchReservations.fulfilled, (state, action) => {
+      .addCase(addReservation.fulfilled, (state, action) => {
+        state.message = action.payload.message;
         state.loading = false;
-        state.reservation = action.payload;
       })
-      .addCase(fetchReservations.rejected, (state, action) => {
+      .addCase(addReservation.rejected, (state, action) => {
+        state.error = action.payload.message;
         state.loading = false;
-        state.error = action.error.message;
       });
   },
 });
 
-export default reservationSlice.reducer;
+export default ReservationAdd.reducer;
