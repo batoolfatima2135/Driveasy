@@ -5,6 +5,7 @@ import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
 import ReservationForm from './Components/Reservation/ReservationForm';
 import Car from './Components/Car/Car';
+import Thankyou from './Pages/Thankyou';
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
       <div className={showSideBar ? 'col-span-6 xl:col-span-7 lg:col-span-7' : 'col-span-7 xl:col-span-9 lg:col-span-10'}>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/thankyou/:status" element={<Thankyou />} />
           <Route path="/cars" element={<Car />} />
           <Route path="/reserve/:id?" element={<ReservationForm />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
