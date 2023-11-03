@@ -51,7 +51,7 @@ const MyForm = () => {
   }, [status, loading, navigate, dispatch]);
 
   return (
-    <div className="flex items-center lg:h-screen justify-center">
+    <div className={formData.imagePreview ? 'flex items-center justify-center' : 'flex items-center justify-center h-screen'}>
       <div className="lg:w-3/4">
         <form
           onSubmit={handleSubmit}
@@ -60,13 +60,13 @@ const MyForm = () => {
           <h1 className="text-2xl font-bold text-center uppercase  text-custom-green">
             Add Car
           </h1>
-          <div className="rounded-full">
+          <div>
             {formData.imagePreview && (
-              <img
-                src={formData.imagePreview}
-                alt="Preview"
-                className="w-1/2 mx-auto rounded-full object-cover"
-              />
+            <img
+              src={formData.imagePreview}
+              alt="Preview"
+              className="w-1/2 mx-auto"
+            />
             )}
           </div>
           <div className="my-2">
@@ -138,25 +138,25 @@ const MyForm = () => {
             </label>
           </div>
           {loading && (
-            <div className="flex justify-center align-middle">
-              <ColorRing
-                visible
-                height="50"
-                width="50"
-                className="m-2"
-                ariaLabel="blocks-loading"
-                wrapperStyle={{}}
-                wrapperClass="blocks-wrapper"
-                colors={[
-                  '#8EB904',
-                  '#A5D606',
-                  '#8EB904',
-                  '#A5D606',
-                  '#8EB904',
-                  '#A5D606',
-                ]}
-              />
-            </div>
+          <div className="flex justify-center align-middle">
+            <ColorRing
+              visible
+              height="50"
+              width="50"
+              className="m-2"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={[
+                '#8EB904',
+                '#A5D606',
+                '#8EB904',
+                '#A5D606',
+                '#8EB904',
+                '#A5D606',
+              ]}
+            />
+          </div>
           )}
           <div className="flex items-center justify-center">
             <button
