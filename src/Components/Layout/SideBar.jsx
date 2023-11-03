@@ -67,27 +67,27 @@ const SideBar = () => {
   const socials = [
     {
       name: 'twitter',
-      link: '/',
+      link: '/cars',
       icon: twitterIcon,
     },
     {
       name: 'facebook',
-      link: '/',
+      link: '/cars',
       icon: facebookIcon,
     },
     {
       name: 'google',
-      link: '/',
+      link: '/cars',
       icon: gmailIcon,
     },
     {
       name: 'linkedin',
-      link: '/',
+      link: '/cars',
       icon: linkedinIcon,
     },
     {
       name: 'pintrest',
-      link: '/',
+      link: '/cars',
       icon: pintrestIcon,
     },
   ];
