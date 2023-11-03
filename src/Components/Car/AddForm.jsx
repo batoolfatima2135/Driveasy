@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
-import { addCar } from '../../Redux/Car/carSlice';
+import { addCar, resetState } from '../../Redux/Car/carSlice';
 
 const MyForm = () => {
   const status = useSelector((state) => state.cars.message);
@@ -44,10 +44,11 @@ const MyForm = () => {
   };
 
   useEffect(() => {
-    if (!loading && status) {
+    if (!loading && status != null) {
+      dispatch(resetState());
       navigate(`/thankyou/${status}`);
     }
-  }, [status, loading, navigate]);
+  }, [status, loading, navigate, dispatch]);
 
   return (
     <div className="flex items-center justify-center">

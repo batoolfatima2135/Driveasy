@@ -75,7 +75,11 @@ const reservationSlice = createSlice({
     error: null,
     reservations: [],
   },
-  reducers: {},
+  reducers: {
+    resetState: (state) => {
+      state.status = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchReservations.pending, (state) => {
@@ -117,5 +121,5 @@ const reservationSlice = createSlice({
       });
   },
 });
-
+export const { resetState } = reservationSlice.actions;
 export default reservationSlice.reducer;

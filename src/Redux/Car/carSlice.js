@@ -62,7 +62,11 @@ const carSlice = createSlice({
     message: null,
     carDetails: null,
   },
-  reducers: {},
+  reducers: {
+    resetState: (state) => {
+      state.message = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCars.pending, (state) => {
@@ -101,5 +105,5 @@ const carSlice = createSlice({
       });
   },
 });
-
+export const { resetState } = carSlice.actions;
 export default carSlice.reducer;

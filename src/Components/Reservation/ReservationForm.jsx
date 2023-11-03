@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchCars } from '../../Redux/Car/carSlice';
+import { fetchCars, resetState } from '../../Redux/Car/carSlice';
 import { addReservation } from '../../Redux/Reservation/reservationSlice';
 
 export default function ReservationForm() {
@@ -14,7 +14,6 @@ export default function ReservationForm() {
     return `${year}-${month}-${day}`;
   }
   const [minDate] = useState(getCurrentDate());
-  const [hasNavigated, setHasNavigated] = useState(false);
   const userID = localStorage.getItem('userId');
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -59,14 +58,14 @@ export default function ReservationForm() {
     dispatch(fetchCars());
     if (!loading) {
       if (status === 'booked') {
+        dispatch(resetState());
         navigate(`/thankyou/${message}`);
-        setHasNavigated(true); // Mark navigation as done
       } else if (status === 'Not booked') {
+        dispatch(resetState());
         navigate(`/sorry/${message}`);
-        setHasNavigated(true); // Mark navigation as done
       }
     }
-  }, [dispatch, loading, status, navigate, message, hasNavigated]);
+  }, [dispatch, loading, status, navigate, message]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
