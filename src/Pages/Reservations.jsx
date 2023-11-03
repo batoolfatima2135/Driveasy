@@ -52,11 +52,11 @@ const Reservations = () => {
           ) : (
             <div className="grid grid-cols-1 mx-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               {reservations.map((reservation) => (
-                <a href={`/car/details/${reservation.car.id}`} key={reservation.id}>
-                  <ReservationCard
-                    reservation={reservation}
-                  />
-                </a>
+
+                <ReservationCard
+                  key={reservation.id}
+                  reservation={reservation}
+                />
               ))}
             </div>
           )}
