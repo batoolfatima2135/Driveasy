@@ -6,10 +6,10 @@ import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
 import ReservationForm from './Components/Reservation/ReservationForm';
-import Car from './Components/Car/Car';
+import Car from './Pages/Car';
 import Thankyou from './Pages/Thankyou';
 import Sorry from './Pages/Sorry';
-import Reservations from './Components/Reservation/Reservations';
+import Reservations from './Pages/Reservations';
 import { fetchCars } from './Redux/Car/carSlice';
 
 function App() {
