@@ -71,8 +71,8 @@ export default function Car() {
               modules={[Navigation]}
               className="my-4"
             >
-              {cars &&
-                cars.map((car) => (
+              {cars
+                && cars.map((car) => (
                   <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
                     <CarCard car={car} />
                   </SwiperSlide>
