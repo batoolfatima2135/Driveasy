@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ColorRing } from 'react-loader-spinner';
@@ -7,7 +7,6 @@ import CarCard from '../Components/Car/CarCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../Car.css';
-import { fetchCars } from '../Redux/Car/carSlice';
 
 export default function Car() {
   const cars = useSelector((state) => state.cars.cars);
@@ -31,10 +30,6 @@ export default function Car() {
       slidesPerView: 3,
     },
   };
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
   return (
     <div className="mx-2">
       {loading ? (
@@ -76,8 +71,8 @@ export default function Car() {
               modules={[Navigation]}
               className="my-4"
             >
-              {cars
-                && cars.map((car) => (
+              {cars &&
+                cars.map((car) => (
                   <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
                     <CarCard car={car} />
                   </SwiperSlide>
