@@ -92,7 +92,7 @@ const carSlice = createSlice({
       })
       .addCase(addCar.fulfilled, (state, action) => {
         state.message = action.payload.message;
-        state.cars.push(action.payload.car);
+        state.cars.unshift(action.payload.car);
         state.loading = false;
       })
       .addCase(addCar.rejected, (state, action) => {
