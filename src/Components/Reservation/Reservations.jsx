@@ -36,7 +36,7 @@ const Reservations = () => {
           />
         </div>
       ) : (
-        <div className="flex flex-col  justify-center mx-3 mt-3 overflow-hidden max-h-full">
+        <div className="flex flex-col  justify-center mx-3 mt-3 max-h-full">
           <div className="flex flex-col items-center justify-center gap-2">
             <h1 className="uppercase font-extrabold text-2xl lg:text-4xl tracking-wider">
               bookings
