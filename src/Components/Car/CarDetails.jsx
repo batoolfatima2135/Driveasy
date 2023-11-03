@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
-import { fetchCarDetails } from '../../Redux/Car/carDetailsSlice';
+import { fetchCarDetails } from '../../Redux/Car/carSlice';
 
 export default function CarDetails() {
-  const car = useSelector((state) => state.carData.carDetails);
+  const car = useSelector((state) => state.cars.carDetails);
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
