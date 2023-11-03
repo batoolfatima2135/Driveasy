@@ -54,7 +54,7 @@ const SideBar = () => {
     },
     {
       name: 'my bookings',
-      link: '/',
+      link: '/reservations',
       icon: shopIcon,
     },
     {
