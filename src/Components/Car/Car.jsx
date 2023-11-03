@@ -3,20 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ColorRing } from 'react-loader-spinner';
-import { fetchCars } from '../../Redux/Car/carSlice';
 import CarCard from './CarCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../../Car.css';
+import { fetchCars } from '../../Redux/Car/carSlice';
 
 export default function Car() {
-  const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
-
-  useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
 
   const breakpoints = {
     // Extra small screens (phones)
@@ -36,7 +31,10 @@ export default function Car() {
       slidesPerView: 3,
     },
   };
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
   return (
     <div className="mx-2">
       {loading ? (
