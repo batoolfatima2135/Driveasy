@@ -144,7 +144,7 @@ const SideBar = () => {
               !open && 'opacity-0 translate-x-28 overflow-hidden'
             }`}
           />
-          <h1 className={` font-extrabold text-4xl text-center mx-auto ${
+          <h1 className={` font-extrabold text-4xl text-center mx-auto text-custom-green ${
             !open && 'opacity-0 translate-x-28 overflow-hidden'
           }`}
           >
