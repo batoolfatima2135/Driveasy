@@ -8,6 +8,7 @@ import Car from './Components/Car/Car';
 import Thankyou from './Pages/Thankyou';
 import Sorry from './Pages/Sorry';
 import Reservations from './Components/Reservation/Reservations';
+import DeleteCar from './Components/Car/DeleteCar';
 
 function App() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/car/details/:id" element={<CarDetails />} />
           <Route path="/car/add" element={<AddForm />} />
+          <Route path="/car/delete" element={<DeleteCar />} />
         </Routes>
       </div>
     </div>
