@@ -9,8 +9,8 @@ const Thankyou = () => {
 
   return (
 
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold text-custom-green">THANK YOU! </h1>
+    <div className="min-h-screen flex flex-col items-center justify-center w-100">
+      <h1 className="text-3xl lg:text-4xl font-bold text-custom-green">THANK YOU! </h1>
       <h2 className="font-semibold capitalize text-center">
         {status}
         {' '}
@@ -20,12 +20,29 @@ const Thankyou = () => {
         width={width}
         height={height}
       />
-      <div className="m-10">
-        <a href="/cars" className=" mx-2 bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Go to Mainpage</a>
-        <a href="/car/add" className="bg-custom-green  mx-2 text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Add More Cars </a>
-        <a href="/reserve" className="bg-custom-green  mx-2 text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Book a car</a>
-
+      <div className="m-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="my-1 mx-1">
+          <a href="/cars" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            View Cars
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/car/add" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            Add More Cars
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/reserve" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            Book Car
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/reservations" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            View Bookings
+          </a>
+        </div>
       </div>
+
     </div>
   );
 };

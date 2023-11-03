@@ -13,11 +13,27 @@ const Sorry = () => {
         {' '}
         😞
       </h2>
-      <div className="m-10">
-        <a href="/cars" className=" mx-2 bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Go to Mainpage</a>
-        <a href="/car/add" className="bg-custom-green  mx-2 text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Add More Cars </a>
-        <a href="/reserve" className="bg-custom-green  mx-2 text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300">Book another car</a>
-
+      <div className="m-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="my-1 mx-1">
+          <a href="/cars" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            View Cars
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/car/add" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            Add More Cars
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/reserve" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            Book Car
+          </a>
+        </div>
+        <div className="my-1 mx-1">
+          <a href="/reservations" className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center">
+            View Bookings
+          </a>
+        </div>
       </div>
     </div>
   );
