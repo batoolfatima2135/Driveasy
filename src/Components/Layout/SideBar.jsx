@@ -15,7 +15,7 @@ import {
   faPinterestP,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import logo from '../../Assets/image/logo192.png';
+import logo from '../../Assets/image/logo.png';
 
 const SideBar = () => {
   const modelIcon = React.createElement(FontAwesomeIcon, { icon: faCar });
@@ -136,13 +136,23 @@ const SideBar = () => {
             onClick={toggleSidebar}
           />
         </div>
-        <img
-          src={logo}
-          alt="logo"
-          className={`w-[10rem] h-20 mx-auto ${
+        <div className="">
+          <img
+            src={logo}
+            alt="logo"
+            className={` mx-auto w-20 ${
+              !open && 'opacity-0 translate-x-28 overflow-hidden'
+            }`}
+          />
+          <h1 className={` font-extrabold text-4xl text-center mx-auto ${
             !open && 'opacity-0 translate-x-28 overflow-hidden'
           }`}
-        />
+          >
+            {' '}
+            DRIVEASY
+          </h1>
+        </div>
+
       </div>
       <div
         className={`flex flex-col gap-4 relative ${
@@ -160,7 +170,7 @@ const SideBar = () => {
             >
               {menu.icon}
               <h2
-                className={`whitespace-pre duration-500 ${
+                className={`whitespace-pre  ${
                   !open && 'opacity-0 translate-x-28 overflow-hidden'
                 }`}
               >
