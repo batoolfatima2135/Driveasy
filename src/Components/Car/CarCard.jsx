@@ -8,7 +8,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-const CarCard = ({ car }) => {
+const CarCard = ({ car, isDeleteRoute }) => {
   const twitterIcon = React.createElement(FontAwesomeIcon, { icon: faTwitter });
   const facebookIcon = React.createElement(FontAwesomeIcon, {
     icon: faFacebookF,
@@ -36,12 +36,18 @@ const CarCard = ({ car }) => {
   ];
   return (
     <Link to={`/car/details/${car.id}`}>
-      <div className="max-w-sm bg-white border-none rounded-lg h-[400px] lg:h-[400px] grid place-items-center hover:border-gray-500 hover:shadow-md">
-        <div>
+      <div
+        className={`max-w-sm bg-white rounded-lg h-[400px] lg:h-[400px] grid place-items-center hover:shadow-md ${
+          isDeleteRoute
+            ? 'max-w-sm bg-white  border-gray-800 shadow-md rounded-lg h-[400px] lg:h-[400px] grid place-items-center hover:translate-y-4 duration-300'
+            : ''
+        }`}
+      >
+        <div className="h-20">
           <img
             src={car.image_url}
             alt={car.name}
-            className="mx-auto object-cover"
+            className="mx-auto h-20 object-cover"
           />
         </div>
         <div className="p-5">
@@ -86,6 +92,16 @@ const CarCard = ({ car }) => {
             ))}
           </div>
         </div>
+        {isDeleteRoute && (
+          <div className="flex justify-center items-center">
+            <button
+              type="button"
+              className="border border-red-700 hover:bg-red-700 text-red-700 w-[8rem] hover:text-white font-bold py-2 px-4 rounded mt-[5px] duration-300"
+            >
+              Delete
+            </button>
+          </div>
+        )}
       </div>
     </Link>
   );
@@ -99,6 +115,11 @@ CarCard.propTypes = {
     model: PropTypes.string.isRequired,
     image_url: PropTypes.string.isRequired,
   }).isRequired,
+  isDeleteRoute: PropTypes.bool,
+};
+
+CarCard.defaultProps = {
+  isDeleteRoute: false,
 };
 
 export default CarCard;
