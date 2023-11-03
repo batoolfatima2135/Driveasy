@@ -1,19 +1,25 @@
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import CarDetails from './Components/Car/CarDetails';
 import SideBar from './Components/Layout/SideBar';
 import AddForm from './Components/Car/AddForm';
 import ReservationForm from './Components/Reservation/ReservationForm';
-import Car from './Components/Car/Car';
+import Car from './Pages/Car';
 import Thankyou from './Pages/Thankyou';
 import Sorry from './Pages/Sorry';
-import Reservations from './Components/Reservation/Reservations';
+import Reservations from './Pages/Reservations';
+import { fetchCars } from './Redux/Car/carSlice';
 
 function App() {
   const location = useLocation();
   const showSideBar = location.pathname !== '/';
   const reservationForm = /^\/reserve(\/\d+)?\/?$/.test(location.pathname);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
   return (
     <div className="grid justify-center align-middle grid-cols-7 xl:grid-cols-9 lg:grid-cols-10 h-screen">
       {showSideBar && (
@@ -46,7 +52,5 @@ function App() {
     </div>
   );
 }
-
-// export default App;
 
 export default App;

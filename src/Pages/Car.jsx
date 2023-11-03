@@ -1,22 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ColorRing } from 'react-loader-spinner';
-import { fetchCars } from '../../Redux/Car/carSlice';
-import CarCard from './CarCard';
+import CarCard from '../Components/Car/CarCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import '../../Car.css';
+import '../Car.css';
 
 export default function Car() {
-  const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
-
-  useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
 
   const breakpoints = {
     // Extra small screens (phones)
@@ -36,7 +30,6 @@ export default function Car() {
       slidesPerView: 3,
     },
   };
-
   return (
     <div className="mx-2">
       {loading ? (
@@ -78,11 +71,12 @@ export default function Car() {
               modules={[Navigation]}
               className="my-4"
             >
-              {cars.map((car) => (
-                <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
-                  <CarCard car={car} />
-                </SwiperSlide>
-              ))}
+              {cars
+                && cars.map((car) => (
+                  <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
+                    <CarCard car={car} />
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
         </div>

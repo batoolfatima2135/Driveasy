@@ -14,13 +14,14 @@ export default function ReservationForm() {
     return `${year}-${month}-${day}`;
   }
   const [minDate] = useState(getCurrentDate());
+  const [hasNavigated, setHasNavigated] = useState(false);
   const userID = localStorage.getItem('userId');
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = useSelector((state) => state.addReservation.status);
-  const message = useSelector((state) => state.addReservation.message);
-  const loading = useSelector((state) => state.addReservation.loading);
+  const status = useSelector((state) => state.reservations.status);
+  const message = useSelector((state) => state.reservations.message);
+  const loading = useSelector((state) => state.reservations.loading);
   const cars = useSelector((state) => state.cars.cars);
   const [formData, setFormData] = useState({
     city: '',
@@ -56,13 +57,16 @@ export default function ReservationForm() {
 
   useEffect(() => {
     dispatch(fetchCars());
-    if (!loading && status === 'booked') {
-      navigate(`/thankyou/${message}`);
+    if (!loading) {
+      if (status === 'booked') {
+        navigate(`/thankyou/${message}`);
+        setHasNavigated(true); // Mark navigation as done
+      } else if (status === 'Not booked') {
+        navigate(`/sorry/${message}`);
+        setHasNavigated(true); // Mark navigation as done
+      }
     }
-    if (!loading && status === 'Not booked') {
-      navigate(`/sorry/${message}`);
-    }
-  }, [dispatch, loading, status, navigate, message]);
+  }, [dispatch, loading, status, navigate, message, hasNavigated]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
