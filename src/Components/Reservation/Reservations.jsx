@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
-import { fetchReservations } from '../../Redux/Reservation/showReservationSlice';
+import { fetchReservations } from '../../Redux/Reservation/reservationSlice';
 import ReservationCard from './ReservationCard';
 
 const Reservations = () => {
@@ -45,11 +45,11 @@ const Reservations = () => {
               Here are all the bookings you have made.
             </p>
           </div>
-          <di className="grid grid-cols-1 mx-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          <div className="grid grid-cols-1 mx-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {reservations.map((reservation) => (
               <ReservationCard key={reservation.id} reservation={reservation} />
             ))}
-          </di>
+          </div>
         </div>
       )}
     </div>
