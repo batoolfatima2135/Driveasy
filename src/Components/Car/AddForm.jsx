@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
-import { addCar } from '../../Redux/Car/carAddSlice';
+import { addCar } from '../../Redux/Car/carSlice';
 
 const MyForm = () => {
-  const status = useSelector((state) => state.addCar.message);
-  const loading = useSelector((state) => state.addCar.loading);
+  const status = useSelector((state) => state.cars.message);
+  const loading = useSelector((state) => state.cars.loading);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const MyForm = () => {
     price: '',
     color: '',
     model: '',
-    image: null, // For file input
+    image: null,
   });
 
   const handleChange = (e) => {
@@ -166,7 +166,6 @@ const MyForm = () => {
             </button>
           </div>
         </form>
-
       </div>
     </div>
   );
