@@ -51,7 +51,7 @@ const MyForm = () => {
   }, [status, loading, navigate, dispatch]);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center lg:h-screen justify-center">
       <div className="lg:w-3/4">
         <form
           onSubmit={handleSubmit}
