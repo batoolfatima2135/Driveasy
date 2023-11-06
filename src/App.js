@@ -13,7 +13,7 @@ import Reservations from './Pages/Reservations';
 import DeleteCar from './Pages/DeleteCar';
 import { fetchCars } from './Redux/Car/carSlice';
 
-function App() {
+const App = () => {
   const location = useLocation();
   const showSideBar = location.pathname !== '/';
   const reservationForm = /^\/reserve(\/\d+)?\/?$/.test(location.pathname);
@@ -53,6 +53,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
