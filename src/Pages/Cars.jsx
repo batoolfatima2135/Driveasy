@@ -9,10 +9,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import '../Car.css';
 
-// export default function Car() {
-
-// }
-
 const Car = () => {
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
