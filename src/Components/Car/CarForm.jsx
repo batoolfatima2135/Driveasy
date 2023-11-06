@@ -72,6 +72,8 @@ const MyForm = () => {
           <div className="my-2">
             <label htmlFor="image" className="block text-gray-600">
               Car Image
+              {' '}
+              <span className="text-xs text-gray-500">(Preferred: 1280 x 720px with a white background)</span>
               <input
                 id="image"
                 type="file"

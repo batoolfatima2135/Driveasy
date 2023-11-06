@@ -4,6 +4,7 @@ import { ColorRing } from 'react-loader-spinner';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCars } from '../../Redux/Car/carSlice';
 import { addReservation, resetState } from '../../Redux/Reservation/reservationSlice';
+import '../../index.css';
 
 export default function ReservationForm() {
   function getCurrentDate() {
@@ -147,7 +148,7 @@ export default function ReservationForm() {
                 required
                 min={minDate}
                 onChange={handleChange}
-                className="bg-white mx-2 lg:col-span-1 md:col-span-1 focus:bg-custom-green col-span-3 focus:text-white cursor-pointer my-1 text-custom-green rounded-full px-4 border outline-none lg:p-4 p-2"
+                className="bg-white mx-2 lg:col-span-1 md:col-span-1 focus:bg-custom-green col-span-3 focus:text-white my-1 text-custom-green rounded-full  border outline-none lg:p-4 p-2"
               />
             </div>
             {loading && (
