@@ -72,7 +72,7 @@ export default function Car() {
                 </p>
                 <Link
                   to="/car/add"
-                  className="text-center p-2 bg-custom-green-light rounded-full text-white hover:bg-custom-green transition-all duration-300 ease-in-out"
+                  className="bg-custom-green text-white rounded py-2 px-5 hover:bg-custom-green-light transition duration-300 block text-center"
                 >
                   Add Car
                 </Link>
