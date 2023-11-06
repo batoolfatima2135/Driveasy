@@ -79,7 +79,6 @@ export default function Car() {
               </div>
             ) : (
               <Swiper
-                spaceBetween={20}
                 slidesPerView={3}
                 breakpoints={breakpoints}
                 navigation
