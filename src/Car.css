@@ -36,4 +36,8 @@
     font-size: 30px;
     padding: 1rem 1.8rem;
   }
+
+  .swiper-wrapper {
+    height: 28rem;
+  }
 }
