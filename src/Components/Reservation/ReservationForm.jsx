@@ -101,7 +101,7 @@ export default function ReservationForm() {
                   required
                   name="city"
                   onChange={handleChange}
-                  className="bg-custom-green text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
+                  className="bg-custom-green cursor-pointer text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
                 >
                   <option disabled selected value="">
                     Select a city
@@ -121,7 +121,7 @@ export default function ReservationForm() {
                     required
                     name="car_id"
                     onChange={handleChange}
-                    className="bg-custom-green text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
+                    className="bg-custom-green cursor-pointer text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
                   >
                     <option disabled selected value="">
                       Select a car

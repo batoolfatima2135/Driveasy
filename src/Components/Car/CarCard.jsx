@@ -63,7 +63,7 @@ const CarCard = ({ car, isDeleteRoute }) => {
               . . . . . . . . . . . .
             </div>
             <div className="grid place-items-center">
-              <p className="mb-3 font-normal text-gray-400 text-center text-sm mt-10">
+              <p className="font-normal text-gray-400 text-center text-sm my-3">
                 Here we have the
                 {' '}
                 {car.name}

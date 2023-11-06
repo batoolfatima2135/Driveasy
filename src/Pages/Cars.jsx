@@ -64,7 +64,6 @@ export default function Car() {
           </div>
           <div className="w-full mx-auto">
             <Swiper
-              spaceBetween={20}
               slidesPerView={3}
               breakpoints={breakpoints}
               navigation
