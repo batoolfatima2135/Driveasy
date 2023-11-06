@@ -87,7 +87,7 @@ export default function CarDetails() {
                 Representative
               </p>
               <p className="text-left lg:text-right">
-                <a className="font-bold text-xs -tracking-widest" href="/">
+                <a className="font-bold text-xs -tracking-widest" href="/cars">
                   {' '}
                   DISCOVER MORE MODELS
                   <b className="text-yellow-500 text-lg"> &gt; </b>
