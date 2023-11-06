@@ -129,11 +129,17 @@ const ReservationForm = () => {
                     <option disabled selected value="">
                       Select a car
                     </option>
-                    {cars &&
-                      cars.length > 0 &&
-                      cars.map((car) => (
+                    {cars
+                      && cars.length > 0
+                      && cars.map((car) => (
                         <option key={car.id} value={car.id}>
-                          {car.color} {car.name} - {car.model}
+                          {car.color}
+                          {' '}
+                          {car.name}
+                          {' '}
+                          -
+                          {' '}
+                          {car.model}
                         </option>
                       ))}
                   </select>
