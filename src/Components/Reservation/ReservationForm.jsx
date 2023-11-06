@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCars } from '../../Redux/Car/carSlice';
-import { addReservation } from '../../Redux/Reservation/reservationSlice';
+import { addReservation, resetState } from '../../Redux/Reservation/reservationSlice';
+import '../../index.css';
 
 export default function ReservationForm() {
   function getCurrentDate() {
@@ -14,7 +15,6 @@ export default function ReservationForm() {
     return `${year}-${month}-${day}`;
   }
   const [minDate] = useState(getCurrentDate());
-  const [hasNavigated, setHasNavigated] = useState(false);
   const userID = localStorage.getItem('userId');
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -59,14 +59,14 @@ export default function ReservationForm() {
     dispatch(fetchCars());
     if (!loading) {
       if (status === 'booked') {
+        dispatch(resetState());
         navigate(`/thankyou/${message}`);
-        setHasNavigated(true); // Mark navigation as done
       } else if (status === 'Not booked') {
+        dispatch(resetState());
         navigate(`/sorry/${message}`);
-        setHasNavigated(true); // Mark navigation as done
       }
     }
-  }, [dispatch, loading, status, navigate, message, hasNavigated]);
+  }, [dispatch, loading, status, navigate, message]);
   return (
     <div
       className="h-screen  flex items-center justify-center"
@@ -101,7 +101,7 @@ export default function ReservationForm() {
                   required
                   name="city"
                   onChange={handleChange}
-                  className="bg-custom-green text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
+                  className="bg-custom-green cursor-pointer text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
                 >
                   <option disabled selected value="">
                     Select a city
@@ -121,7 +121,7 @@ export default function ReservationForm() {
                     required
                     name="car_id"
                     onChange={handleChange}
-                    className="bg-custom-green text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
+                    className="bg-custom-green cursor-pointer text-white rounded-full px-2 w-11/12 outline-none lg:p-4 p-2"
                   >
                     <option disabled selected value="">
                       Select a car
@@ -148,7 +148,7 @@ export default function ReservationForm() {
                 required
                 min={minDate}
                 onChange={handleChange}
-                className="bg-white mx-2 lg:col-span-1 md:col-span-1 focus:bg-custom-green col-span-3 focus:text-white cursor-pointer my-1 text-custom-green rounded-full px-4 border outline-none lg:p-4 p-2"
+                className="bg-white mx-2 lg:col-span-1 md:col-span-1 focus:bg-custom-green col-span-3 focus:text-white my-1 text-custom-green rounded-full  border outline-none lg:p-4 p-2"
               />
             </div>
             {loading && (

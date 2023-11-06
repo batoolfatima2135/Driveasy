@@ -40,7 +40,8 @@ export default function CarDetails() {
         <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 lg:col-span-5 flex flex-col gap-2 mx-2 justify-center align-middle">
             <img src={car.image_url} alt="car" />
-            <button
+            <a
+              href="/cars"
               type="button"
               className=" flex justify-end rounded-l-none rounded-r-full bg-custom-green p-1 lg:p-3 lg:w-20 w-11"
             >
@@ -50,7 +51,7 @@ export default function CarDetails() {
                 width={20}
                 alt="icon"
               />
-            </button>
+            </a>
           </div>
 
           <div className="col-span-9 lg:col-span-3 flex justify-center align-middle mt-5 lg:pt-5">
@@ -86,7 +87,7 @@ export default function CarDetails() {
                 Representative
               </p>
               <p className="text-left lg:text-right">
-                <a className="font-bold text-xs -tracking-widest" href="/">
+                <a className="font-bold text-xs -tracking-widest" href="/cars">
                   {' '}
                   DISCOVER MORE MODELS
                   <b className="text-yellow-500 text-lg"> &gt; </b>

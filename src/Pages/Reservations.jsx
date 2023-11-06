@@ -36,7 +36,7 @@ const Reservations = () => {
           />
         </div>
       ) : (
-        <div className="flex flex-col  justify-center mx-3 mt-3 max-h-full">
+        <div className="flex flex-col  justify-center mx-3 mt-8 max-h-full">
           <div className="flex flex-col items-center justify-center gap-2">
             <h1 className="uppercase font-extrabold text-2xl lg:text-4xl tracking-wider">
               bookings
@@ -52,6 +52,7 @@ const Reservations = () => {
           ) : (
             <div className="grid grid-cols-1 mx-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               {reservations.map((reservation) => (
+
                 <ReservationCard
                   key={reservation.id}
                   reservation={reservation}

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type="date"] {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  padding-left: 12rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  padding-top: 1rem;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  position: absolute;
+  right: 0;
+}

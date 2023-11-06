@@ -74,27 +74,27 @@ const SideBar = () => {
   const socials = [
     {
       name: 'twitter',
-      link: '/',
+      link: '/cars',
       icon: twitterIcon,
     },
     {
       name: 'facebook',
-      link: '/',
+      link: '/cars',
       icon: facebookIcon,
     },
     {
       name: 'google',
-      link: '/',
+      link: '/cars',
       icon: gmailIcon,
     },
     {
       name: 'linkedin',
-      link: '/',
+      link: '/cars',
       icon: linkedinIcon,
     },
     {
       name: 'pintrest',
-      link: '/',
+      link: '/cars',
       icon: pintrestIcon,
     },
   ];
@@ -143,21 +143,24 @@ const SideBar = () => {
             onClick={toggleSidebar}
           />
         </div>
-        <div className="">
-          <img
-            src={logo}
-            alt="logo"
-            className={` mx-auto w-20 ${
+        <div>
+          <a href="/cars">
+            <img
+              src={logo}
+              alt="logo"
+              className={` mx-auto w-20 ${
+                !open && 'opacity-0 translate-x-28 overflow-hidden'
+              }`}
+            />
+            <h1 className={` font-extrabold text-4xl text-center mx-auto text-custom-green ${
               !open && 'opacity-0 translate-x-28 overflow-hidden'
             }`}
-          />
-          <h1 className={` font-extrabold text-4xl text-center mx-auto text-custom-green ${
-            !open && 'opacity-0 translate-x-28 overflow-hidden'
-          }`}
-          >
-            {' '}
-            DRIVEASY
-          </h1>
+            >
+              {' '}
+              DRIVEASY
+            </h1>
+          </a>
+
         </div>
 
       </div>
