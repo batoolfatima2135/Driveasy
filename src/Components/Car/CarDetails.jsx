@@ -76,10 +76,15 @@ const CarDetails = () => {
               </div>
               <div className="flex justify-between  p-2 px-4">
                 <p className="font-medium text-sm">Price Per Day</p>
-                <p className="font-medium text-sm">${car.price}</p>
+                <p className="font-medium text-sm">
+                  $
+                  {car.price}
+                </p>
               </div>
               <p className="m-2">
-                <b>5.9% APR</b> Representative
+                <b>5.9% APR</b>
+                {' '}
+                Representative
               </p>
               <p className="text-left lg:text-right">
                 <a className="font-bold text-xs -tracking-widest" href="/cars">
