@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ColorRing } from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 import CarCard from '../Components/Car/CarCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -63,20 +64,36 @@ export default function Car() {
             </p>
           </div>
           <div className="w-full mx-auto">
-            <Swiper
-              slidesPerView={3}
-              breakpoints={breakpoints}
-              navigation
-              modules={[Navigation]}
-              className="my-4"
-            >
-              {cars
-                && cars.map((car) => (
-                  <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
-                    <CarCard car={car} />
-                  </SwiperSlide>
-                ))}
-            </Swiper>
+            {cars.length === 0 ? (
+              <div className="grid place-items-center gap-4">
+                <p className="text-center text-gray-400 mt-4">
+                  You have no cars at the moment, please click the button below
+                  to add one.
+                </p>
+                <Link
+                  to="/car/add"
+                  className="text-center p-2 bg-custom-green-light rounded-full text-white hover:bg-custom-green transition-all duration-300 ease-in-out"
+                >
+                  Add Car
+                </Link>
+              </div>
+            ) : (
+              <Swiper
+                spaceBetween={20}
+                slidesPerView={3}
+                breakpoints={breakpoints}
+                navigation
+                modules={[Navigation]}
+                className="my-4"
+              >
+                {cars
+                  && cars.map((car) => (
+                    <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
+                      <CarCard car={car} />
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
+            )}
           </div>
         </div>
       )}
