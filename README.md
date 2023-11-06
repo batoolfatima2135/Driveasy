@@ -47,9 +47,13 @@
 ### Key Features <a name="key-features"></a>
 
 - **Add Car**
+- **Delete Car**
 - **Show details of Car**
 - **Show all Cars**
-
+- **Book Car**
+- **Show all Booking**
+- **Cancel Booking** 
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -91,10 +95,6 @@ Install this project with:
 * npm install
 
 
-### Run tests
-
-Coming soon
-
 ### Deployment <a name="deployment"></a>
 
 You can deploy this project using: GitHub Pages or render
@@ -125,7 +125,7 @@ You can deploy this project using: GitHub Pages or render
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Delete Car**
+- **Dark Mode**
 - **Authentication**
 
 
