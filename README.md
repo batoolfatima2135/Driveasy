@@ -92,7 +92,10 @@ cd Driveasy
 
 Install this project with:
 
-- npm install
+```sh
+  cd Driveasy
+  npm install
+```
 
 ### Usage
 
