@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCars } from '../../Redux/Car/carSlice';
-import { addReservation, resetState } from '../../Redux/Reservation/reservationSlice';
+import {
+  addReservation,
+  resetState,
+} from '../../Redux/Reservation/reservationSlice';
 import '../../index.css';
 
-export default function ReservationForm() {
+const ReservationForm = () => {
   function getCurrentDate() {
     const today = new Date();
     const year = today.getFullYear();
@@ -173,10 +176,11 @@ export default function ReservationForm() {
               </div>
             )}
             {status === 'Not booked' && (
-            <p className="font-semibold text-center uppercase text-red-600 mt-4">{message}</p>
+              <p className="font-semibold text-center uppercase text-red-600 mt-4">
+                {message}
+              </p>
             )}
             <div className="flex justify-center">
-
               <button
                 type="submit"
                 className="bg-white lg:m-4 md:m-4 m-2 lg:p-5 p-3 text-sm lg:text-base  font-medium text-custom-green  py-3  rounded-full hover:bg-custom-green-light hover:text-white focus:outline-none"
@@ -189,4 +193,6 @@ export default function ReservationForm() {
       </div>
     </div>
   );
-}
+};
+
+export default ReservationForm;
