@@ -32,6 +32,7 @@
 # 📖 Driveasy <a name="about-project"></a>
 
 **Driveasy** is a user-friendly app for adding, booking, and managing cars. Easily add your vehicles to your digital garage. Conveniently book cars as needed. Access comprehensive car details effortlessly. Simplify your automotive experience with Driveasy.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -40,7 +41,6 @@
   <summary>Client</summary>
     <li><a href="https://reactjs.org/">React</a></li>
 </details>
-
 
 <!-- Features -->
 
@@ -52,11 +52,9 @@
 - **Show all Cars**
 - **Book Car**
 - **Show all Booking**
-- **Cancel Booking** 
- 
+- **Cancel Booking**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## 🚀 Backend link <a name="Backend"></a>
 
@@ -64,6 +62,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- GETTING STARTED -->
 
 <!-- GETTING STARTED -->
 
@@ -75,34 +74,40 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-* GitHub
-* Code Editor
-* npm
+- `React`
+- `Redux`
+- `Rails`
+- `Tailwind CSS and HTML`
+- `Code editor (VSCode)`
 
 ### Setup
 
 Clone this repository to your desired folder:
 <code>
-  git clone https://github.com/batoolfatima2135/Driveasy
-  cd Driveasy
+git clone https://github.com/batoolfatima2135/Driveasy
+cd Driveasy
 </code>
-
 
 ### Install
 
 Install this project with:
 
-* npm install
+- npm install
 
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  npm start
+```
 
 ### Deployment <a name="deployment"></a>
 
 You can deploy this project using: GitHub Pages or render
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHORS -->
-
 
 ## 👥 Author <a name="author"></a>
 
@@ -118,7 +123,6 @@ You can deploy this project using: GitHub Pages or render
 - Twitter: (https://twitter.com/@Oomaidu)
 - LinkedIn: (https://www.linkedin.com/in/othniel-omaidu-3350a9164)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -127,7 +131,6 @@ You can deploy this project using: GitHub Pages or render
 
 - **Dark Mode**
 - **Authentication**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
