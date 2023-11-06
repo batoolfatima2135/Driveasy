@@ -4,10 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import { loginUser } from '../../Redux/Login/loginSlice';
 
-// export default function Login() {
-
-// }
-
 const Login = () => {
   const [username, setUsername] = useState('');
   const [hasNavigated, setHasNavigated] = useState(false);
@@ -44,8 +40,7 @@ const Login = () => {
       <div className="h-screen flex items-center justify-center  bg-custom-green bg-opacity-95 w-full">
         <div className="lg:w-1/3 w-4/5">
           <h2 className="text-2xl w-3/4  font-bold text-center mx-auto text-white tracking-widest  mb-4 pb-4 font-sans border-b">
-            LOGIN
-            {' '}
+            LOGIN{' '}
           </h2>
           <p className="text-center text-white m-4">
             Welcome to the Driveasy, to Continue to the website kindly enter a
