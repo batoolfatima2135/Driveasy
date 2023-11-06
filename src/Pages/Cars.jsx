@@ -9,7 +9,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import '../Car.css';
 
-export default function Car() {
+// export default function Car() {
+
+// }
+
+const Car = () => {
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
 
@@ -85,8 +89,8 @@ export default function Car() {
                 modules={[Navigation]}
                 className="my-4"
               >
-                {cars
-                  && cars.map((car) => (
+                {cars &&
+                  cars.map((car) => (
                     <SwiperSlide className="w-[70%] mx-auto" key={car.id}>
                       <CarCard car={car} />
                     </SwiperSlide>
@@ -98,4 +102,6 @@ export default function Car() {
       )}
     </div>
   );
-}
+};
+
+export default Car;
