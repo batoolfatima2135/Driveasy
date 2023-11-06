@@ -7,6 +7,7 @@ import {
   faCalendar,
   faPlus,
   faBarsStaggered,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookF,
@@ -40,6 +41,7 @@ const SideBar = () => {
   const pintrestIcon = React.createElement(FontAwesomeIcon, {
     icon: faPinterestP,
   });
+  const deleteIcon = React.createElement(FontAwesomeIcon, { icon: faTrash });
 
   const menus = [
     {
@@ -61,6 +63,11 @@ const SideBar = () => {
       name: 'add car',
       link: '/car/add',
       icon: driveIcon,
+    },
+    {
+      name: 'delete car',
+      link: '/car/delete',
+      icon: deleteIcon,
     },
   ];
 

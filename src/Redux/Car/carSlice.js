@@ -53,6 +53,21 @@ export const addCar = createAsyncThunk('car/add', async (formData) => {
   }
 });
 
+export const deleteCar = createAsyncThunk('car/delete', async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3000/cars/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const carList = await response.json();
+    return carList;
+  } catch (error) {
+    return error.message;
+  }
+});
+
 const carSlice = createSlice({
   name: 'car',
   initialState: {
@@ -96,6 +111,18 @@ const carSlice = createSlice({
         state.loading = false;
       })
       .addCase(addCar.rejected, (state, action) => {
+        state.error = action.payload.message;
+        state.loading = false;
+      })
+      .addCase(deleteCar.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteCar.fulfilled, (state, action) => {
+        state.message = action.payload.message;
+        state.cars = state.cars.filter((i) => i.id !== action.payload.car.id);
+        state.loading = false;
+      })
+      .addCase(deleteCar.rejected, (state, action) => {
         state.error = action.payload.message;
         state.loading = false;
       });
