@@ -10,6 +10,7 @@ import Car from './Pages/Car';
 import Thankyou from './Pages/Thankyou';
 import Sorry from './Pages/Sorry';
 import Reservations from './Pages/Reservations';
+import DeleteCar from './Pages/DeleteCar';
 import { fetchCars } from './Redux/Car/carSlice';
 
 function App() {
