@@ -10,13 +10,16 @@ import {
 import '../../index.css';
 
 const ReservationForm = () => {
-  function getCurrentDate() {
+  // function getCurrentDate() {
+
+  // }
+  const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
-  }
+  };
   const [minDate] = useState(getCurrentDate());
   const userID = localStorage.getItem('userId');
   const { id } = useParams();
@@ -129,17 +132,11 @@ const ReservationForm = () => {
                     <option disabled selected value="">
                       Select a car
                     </option>
-                    {cars
-                      && cars.length > 0
-                      && cars.map((car) => (
+                    {cars &&
+                      cars.length > 0 &&
+                      cars.map((car) => (
                         <option key={car.id} value={car.id}>
-                          {car.color}
-                          {' '}
-                          {car.name}
-                          {' '}
-                          -
-                          {' '}
-                          {car.model}
+                          {car.color} {car.name} - {car.model}
                         </option>
                       ))}
                   </select>
