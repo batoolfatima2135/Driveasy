@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { cancelReservation } from '../../Redux/Reservation/reservationSlice';
 
 const ReservationCard = ({ reservation }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = useSelector((state) => state.reservations.status);
   const handleSubmit = (id) => {
     dispatch(cancelReservation(id));
   };
   useEffect(() => {
-
-  }, [status, navigate]);
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
+  }, [navigate]);
 
   return (
     <div className="max-w-sm bg-white cursor-pointer border-gray-300 shadow-lg rounded-lg border grid place-items-center hover:-translate-y-1 duration-200">

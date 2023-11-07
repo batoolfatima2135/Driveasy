@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ColorRing } from 'react-loader-spinner';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CarCard from '../Components/Car/CarCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,6 +12,7 @@ import '../Car.css';
 const Car = () => {
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
+  const navigate = useNavigate();
 
   const breakpoints = {
     // Extra small screens (phones)
@@ -31,6 +32,11 @@ const Car = () => {
       slidesPerView: 3,
     },
   };
+  useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
+  });
   return (
     <div className="mx-2">
       {loading ? (

@@ -44,6 +44,9 @@ const MyForm = () => {
   };
 
   useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
     if (!loading && status != null) {
       dispatch(resetState());
       navigate(`/thankyou/${status}`);

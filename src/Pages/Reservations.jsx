@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import { fetchReservations } from '../Redux/Reservation/reservationSlice';
 import ReservationCard from '../Components/Reservation/ReservationCard';
@@ -8,10 +9,14 @@ const Reservations = () => {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservations.reservations);
   const loading = useSelector((state) => state.reservations.loading);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
     dispatch(fetchReservations());
-  }, [dispatch]);
+  }, [navigate, dispatch]);
 
   return (
     <div className="mx-2 max-h-[47.1rem] pb-3 overflow-y-scroll">

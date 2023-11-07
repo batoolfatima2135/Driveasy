@@ -12,10 +12,11 @@ import Sorry from './Pages/Sorry';
 import Reservations from './Pages/Reservations';
 import DeleteCar from './Pages/DeleteCar';
 import { fetchCars } from './Redux/Car/carSlice';
+import PageNotFound from './Pages/PageNotFound';
 
 const App = () => {
   const location = useLocation();
-  const showSideBar = location.pathname !== '/';
+  const showSideBar = location.pathname !== '/' && localStorage.getItem('userId');
   const reservationForm = /^\/reserve(\/\d+)?\/?$/.test(location.pathname);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/car/details/:id" element={<CarDetails />} />
           <Route path="/car/add" element={<AddForm />} />
           <Route path="/car/delete" element={<DeleteCar />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </div>
