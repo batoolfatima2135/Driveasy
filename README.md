@@ -112,7 +112,7 @@ You can deploy this project using: GitHub Pages or render
 
 ## 📗 KanBan Board <a name="kanban"></a>
 
-## A Team of 2 Members worked on this project - [See list of authors](#authors)
+## A Team of 2 Members worked on this project - [See list of authors](#author)
 
 **Link to Kanban**
 
