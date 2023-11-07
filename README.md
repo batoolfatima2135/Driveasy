@@ -20,9 +20,11 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+  - [📗 Kanban Board ](#kanban-)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
+
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
@@ -110,6 +112,12 @@ You can deploy this project using: GitHub Pages or render
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHORS -->
 
+## 📗 Kanban Board <a name= "kanban" >
+
+**Link**
+kanban board: (https://github.com/users/batoolfatima2135/projects/11/views/1)
+
+**Initial State of kanban**
 ## 👥 Author <a name="author"></a>
 
 👤 **Batool Fatima**
