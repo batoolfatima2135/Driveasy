@@ -10,9 +10,6 @@ import {
 import '../../index.css';
 
 const ReservationForm = () => {
-  // function getCurrentDate() {
-
-  // }
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
