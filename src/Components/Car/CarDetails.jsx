@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchCarDetails } from '../../Redux/Car/carSlice';
 
 export default function CarDetails() {
   const car = useSelector((state) => state.cars.carDetails);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
     dispatch(fetchCarDetails(id));
   }, [dispatch, id]);
   return (
