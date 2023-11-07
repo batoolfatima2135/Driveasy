@@ -16,7 +16,7 @@ const Reservations = () => {
       navigate('/');
     }
     dispatch(fetchReservations());
-  }, [dispatch]);
+  }, [navigate, dispatch]);
 
   return (
     <div className="mx-2 max-h-[47.1rem] pb-3 overflow-y-scroll">

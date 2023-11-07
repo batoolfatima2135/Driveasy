@@ -14,7 +14,7 @@ const CarDetails = () => {
       navigate('/');
     }
     dispatch(fetchCarDetails(id));
-  }, [dispatch, id]);
+  }, [dispatch, id, navigate]);
   return (
     <div>
       {!car && (
