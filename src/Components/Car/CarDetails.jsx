@@ -4,7 +4,7 @@ import { ColorRing } from 'react-loader-spinner';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchCarDetails } from '../../Redux/Car/carSlice';
 
-export default function CarDetails() {
+const CarDetails = () => {
   const car = useSelector((state) => state.cars.carDetails);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -123,4 +123,6 @@ export default function CarDetails() {
       )}
     </div>
   );
-}
+};
+
+export default CarDetails;
