@@ -20,7 +20,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [📗 KanBan Board](#-kanba-)
+  - [📗 KanBan Board](#-kanban-)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
