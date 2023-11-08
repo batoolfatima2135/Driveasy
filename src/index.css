@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="date"] {
+  position: relative;
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  padding-left: 12rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  padding-top: 1rem;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  position: absolute;
+  right: 0;
 }
