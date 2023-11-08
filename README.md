@@ -20,7 +20,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [📗 Kanban Board ](#kanban-)
+  - [📗 KanBan Board](#-kanba-)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -110,6 +110,20 @@ To run the project, execute the following command:
 You can deploy this project using: GitHub Pages or render
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📗 KanBan Board <a name="kanban"></a>
+
+## A Team of 2 Members worked on this project - [See list of authors](#author)
+
+**Link to Kanban**
+
+- KanBan: (https://github.com/users/batoolfatima2135/projects/11)
+
+**Screenshot of initial state**
+<img src="./src/Assets/image/kanban.png" alt="kanban" />
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- AUTHORS -->
 
 ## 📗 Kanban Board <a name= "kanban" >

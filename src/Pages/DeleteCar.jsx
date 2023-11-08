@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import CarCard from '../Components/Car/CarCard';
 
 const DeleteCar = () => {
   const cars = useSelector((state) => state.cars.cars);
   const loading = useSelector((state) => state.cars.loading);
-
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
+  });
   return (
     <div className="mx-2 max-h-[47.1rem] pb-3 overflow-y-scroll">
       {loading ? (

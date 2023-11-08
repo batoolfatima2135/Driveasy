@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchCars } from '../../Redux/Car/carSlice';
 import {
   addReservation,
   resetState,
@@ -59,7 +58,9 @@ const ReservationForm = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchCars());
+    if (!localStorage.getItem('userId')) {
+      navigate('/');
+    }
     if (!loading) {
       if (status === 'booked') {
         dispatch(resetState());
