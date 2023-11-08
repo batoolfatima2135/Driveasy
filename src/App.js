@@ -22,7 +22,7 @@ function App() {
     dispatch(fetchCars());
   }, [dispatch]);
   return (
-    <div className="grid justify-center align-middle grid-cols-7 xl:grid-cols-9 lg:grid-cols-10 h-screen">
+    <div className="grid justify-center align-middle grid-cols-7 xs:grid-cols-6 xl:grid-cols-9 lg:grid-cols-10 h-screen">
       {showSideBar && (
         <div
           className={`col-span-1 xl:col-span-2 lg:col-span-3 ${
@@ -35,8 +35,8 @@ function App() {
       <div
         className={
           showSideBar
-            ? 'col-span-6 xl:col-span-7 lg:col-span-7'
-            : 'col-span-7 xl:col-span-9 lg:col-span-10'
+            ? 'col-span-6 xs:col-span-5 xl:col-span-7 lg:col-span-7'
+            : 'col-span-7 xs:col-span-6 xl:col-span-9 lg:col-span-10'
         }
       >
         <Routes>
