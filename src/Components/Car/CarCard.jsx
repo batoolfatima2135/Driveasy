@@ -143,7 +143,7 @@ const CarCard = ({ car, isDeleteRoute }) => {
           <img
             src={car.image_url}
             alt={car.name}
-            className="mx-auto object-cover"
+            className="mx-auto object-cover h-40"
           />
         </div>
         <div className="p-5">
