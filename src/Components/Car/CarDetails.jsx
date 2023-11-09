@@ -100,7 +100,7 @@ const CarDetails = () => {
               </p>
               <div className="flex justify-center lg:justify-end lg:my-2">
                 <img
-                  src={`${process.env.PUBLIC_URL}/colors.png`}
+                  src={`${process.env.PUBLIC_URL}/colors.PNG`}
                   alt="colors"
                 />
               </div>
