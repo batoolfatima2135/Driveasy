@@ -130,7 +130,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`bg-[#fff] h-full ${
+      className={`bg-[#fff]  h-full ${
         open ? 'w-72 lg:relative fixed' : 'w-16'
       } duration-500 shadow-lg shadow-gray-500 px-2 flex flex-col justify-between`}
       style={{ zIndex: 1000 }}
