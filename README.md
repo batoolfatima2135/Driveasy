@@ -11,6 +11,7 @@
 ## 📗 Table of Contents
 
 - [📖 Fullstack - Rails with React ](#-Driveasy-)
+
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -20,6 +21,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+  - [🚀Live-link](#🚀-project-live-link)
   - [📗 KanBan Board](#kanban)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
@@ -64,6 +66,11 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Project Live link <a name="live"></a>
+
+- [project live link](https://driveasy.vercel.app/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -132,6 +139,7 @@ You can deploy this project using: GitHub Pages or render
 kanban board: (https://github.com/users/batoolfatima2135/projects/11/views/1)
 
 **Initial State of kanban**
+
 ## 👥 Author <a name="author"></a>
 
 👤 **Batool Fatima**
