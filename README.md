@@ -21,7 +21,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [🚀Live-link](#🚀-project-live-link)
+  - [🚀Live-link](#live)
   - [📗 KanBan Board](#kanban)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
