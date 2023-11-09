@@ -17,7 +17,7 @@ const CarDetails = () => {
     dispatch(fetchCarDetails(id));
   }, [dispatch, id, navigate]);
   return (
-    <div className="flex items-center lg:h-screen">
+    <div className="flex items-center lg:h-screen justify-center">
       {loading && (
         <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 flex h-screen justify-center items-center">
