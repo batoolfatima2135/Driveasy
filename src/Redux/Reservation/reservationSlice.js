@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import baseUrl from '../../api/api';
 
 const userID = localStorage.getItem('userId');
 const intUserID = parseInt(userID, 10);
@@ -7,7 +8,7 @@ export const cancelReservation = createAsyncThunk(
   'reservation/cancel',
   async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/reservations/${id}`, {
+      const response = await fetch(`${baseUrl}/reservations/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +31,7 @@ export const addReservation = createAsyncThunk(
     data.append('reservation[user_id]', formData.user_id);
     data.append('reservation[car_id]', formData.car_id);
     try {
-      const response = await fetch('http://localhost:3000/reservations', {
+      const response = await fetch(`${baseUrl}/reservations`, {
         method: 'POST',
         body: data,
       });
@@ -50,7 +51,7 @@ export const fetchReservations = createAsyncThunk(
   async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/reservations?user_id=${intUserID}`,
+        `${baseUrl}/reservations?user_id=${intUserID}`,
         {
           method: 'GET',
           headers: {

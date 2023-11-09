@@ -13,9 +13,9 @@ module.exports = {
         'custom-green': '#8eb904',
       },
     },
-    screens: {
-      xs: '375px',
-    },
+    // screens: {
+    //   xs: '375px',
+    // },
   },
   plugins: [],
 };

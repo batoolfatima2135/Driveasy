@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { fetchCarDetails } from '../../Redux/Car/carSlice';
 
 const CarDetails = () => {
+  const loading = useSelector((state) => state.cars.loading);
   const car = useSelector((state) => state.cars.carDetails);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,8 +17,8 @@ const CarDetails = () => {
     dispatch(fetchCarDetails(id));
   }, [dispatch, id, navigate]);
   return (
-    <div>
-      {!car && (
+    <div className="flex items-center lg:h-screen">
+      {loading && (
         <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 flex h-screen justify-center items-center">
             <ColorRing
@@ -40,7 +41,7 @@ const CarDetails = () => {
           </div>
         </div>
       )}
-      {car && (
+      {!loading && car && (
         <div className="grid grid-cols-8 p-4 mt-5">
           <div className="col-span-8 lg:col-span-5 flex flex-col gap-2 mx-2 justify-center align-middle">
             <img src={car.image_url} alt="car" />
