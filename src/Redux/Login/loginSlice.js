@@ -1,8 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+const loginUrl = 'https://driveasy.onrender.com/users';
+
 export const loginUser = createAsyncThunk('login/user', async (username) => {
   try {
-    const response = await fetch('http://localhost:3000/users', {
+    const response = await fetch(`${loginUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

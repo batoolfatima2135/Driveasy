@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import baseUrl from '../../api/api';
 
 export const fetchCars = createAsyncThunk('car/all', async () => {
   try {
-    const response = await fetch('http://localhost:3000/cars', {
+    const response = await fetch(`${baseUrl}/cars`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +17,7 @@ export const fetchCars = createAsyncThunk('car/all', async () => {
 });
 export const fetchCarDetails = createAsyncThunk('car/details', async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/cars/${id}`, {
+    const response = await fetch(`${baseUrl}/cars/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +39,7 @@ export const addCar = createAsyncThunk('car/add', async (formData) => {
   data.append('car[model]', formData.model);
   data.append('car[image]', formData.image);
   try {
-    const response = await fetch('http://localhost:3000/cars', {
+    const response = await fetch(`${baseUrl}/cars`, {
       method: 'POST',
       body: data,
     });
@@ -55,7 +56,7 @@ export const addCar = createAsyncThunk('car/add', async (formData) => {
 
 export const deleteCar = createAsyncThunk('car/delete', async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/cars/${id}`, {
+    const response = await fetch(`${baseUrl}/cars/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
